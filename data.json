@@ -8,14 +8,16 @@
       "following": 300,
       "followers": 447,
       "followingCount": 447,
-      "note": "計測開始日"
+      "note": "計測開始日",
+      "likesReceived": 67
     },
     {
       "date": "2026-08-24",
       "foryou": 607,
       "following": 411,
       "followers": 467,
-      "followingCount": 467
+      "followingCount": 467,
+      "likesReceived": 74
     }
   ],
   "updated": "2026-08-24 20:58"

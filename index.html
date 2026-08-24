@@ -152,7 +152,11 @@ h2{font-family:"Dela Gothic One","Zen Kaku Gothic New",sans-serif; font-weight:4
 
 /* ── ledger ─────────────────────────────── */
 .ledger{background:var(--panel); border-radius:14px; box-shadow:var(--glow); overflow-x:auto}
-table{border-collapse:collapse; width:100%; min-width:660px}
+table{border-collapse:collapse; width:100%; min-width:900px}
+.pend{
+  margin-left:6px; font-size:9px; letter-spacing:.1em; padding:1px 5px; border-radius:4px;
+  background:var(--amb-ghost); color:var(--amb); font-weight:600; vertical-align:1px;
+}
 thead th{
   font-family:"Martian Mono",monospace; font-size:9.5px; font-weight:600; letter-spacing:.16em;
   text-transform:uppercase; color:var(--muted); text-align:right; white-space:nowrap;
@@ -256,7 +260,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <table>
         <thead><tr>
           <th>日付</th><th>おすすめ</th><th>フォロー中</th><th>合計</th>
-          <th>内訳</th><th>フォロワー</th><th>前日比</th>
+          <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -269,6 +273,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <li>「自動いいね」を回すたびに、その日の件数とフォロワー数が追記されます。同じ日に複数回まわした分は合算されます。</li>
       <li>記録の実体は <code>data.json</code>、追記は <code>python3 log.py --foryou 100 --following 50 --followers 447</code></li>
       <li>フォロワーの前日比は、2日目以降から表示されます。</li>
+      <li><b>フォロー転換率</b> ＝ フォロワー増加数 ÷ おすすめでいいねした数。<b>いいね返し率</b> ＝ その日の投稿（朝7時・夕方17時ごろの2本）が受け取ったいいね ÷ その日に送ったいいね総数。今日の分の被いいねはまだ伸びるので「集計中」、確定は前日までです。</li>
     </ul>
   </div>
 
@@ -276,7 +281,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
 </div>
 
 <script>
-const DATA = {"account": "monja_no_KENT", "displayName": "西村 健人｜ムラサキ髪のCDO", "days": [{"date": "2026-08-23", "foryou": 206, "following": 300, "followers": 447, "followingCount": 447, "note": "計測開始日"}, {"date": "2026-08-24", "foryou": 607, "following": 411, "followers": 467, "followingCount": 467}], "updated": "2026-08-24 20:58"};
+const DATA = {"account": "monja_no_KENT", "displayName": "西村 健人｜ムラサキ髪のCDO", "days": [{"date": "2026-08-23", "foryou": 206, "following": 300, "followers": 447, "followingCount": 447, "note": "計測開始日", "likesReceived": 67}, {"date": "2026-08-24", "foryou": 607, "following": 411, "followers": 467, "followingCount": 467, "likesReceived": 74}], "updated": "2026-08-24 20:58"};
 
 const days = (DATA.days || []).slice().sort((a,b) => a.date < b.date ? -1 : 1);
 const DOW = ["日","月","火","水","木","金","土"];
@@ -286,11 +291,16 @@ const mmdd = d => { const t = parse(d); return (t.getMonth()+1) + "/" + t.getDat
 const dow  = d => DOW[parse(d).getDay()];
 const $ = id => document.getElementById(id);
 
+const NOW = new Date();
+const TODAY = NOW.getFullYear() + "-" + String(NOW.getMonth()+1).padStart(2,"0") + "-" + String(NOW.getDate()).padStart(2,"0");
 days.forEach((d, i) => {
   d.total = (d.foryou || 0) + (d.following || 0);
   const p = i > 0 ? days[i-1] : null;
   d.delta = (p && typeof p.followers === "number" && typeof d.followers === "number")
     ? d.followers - p.followers : null;
+  d.pending = d.date >= TODAY;
+  d.conv = (d.delta !== null && d.foryou > 0) ? d.delta / d.foryou * 100 : null;
+  d.back = (typeof d.likesReceived === "number" && d.total > 0) ? d.likesReceived / d.total * 100 : null;
 });
 const last = days.length ? days[days.length - 1] : null;
 
@@ -301,6 +311,8 @@ function chipHTML(v, cls){
   if (v < 0) return '<span class="chip down ' + c + '">▼ ' + v + '</span>';
   return '<span class="chip flat ' + c + '">±0</span>';
 }
+
+const pf = v => (v === null || v === undefined) ? "—" : (v >= 0 && v < 10 ? v.toFixed(1) : Math.round(v)) + "%";
 
 /* ── identity ── */
 $("who-name").textContent = DATA.displayName || "";
@@ -330,11 +342,18 @@ const sumFY  = days.reduce((s,d) => s + (d.foryou||0), 0);
 const sumFL  = days.reduce((s,d) => s + (d.following||0), 0);
 const grow = (days.length > 1 && typeof days[0].followers === "number" && typeof last.followers === "number")
   ? last.followers - days[0].followers : null;
+const convDays = days.filter(d => d.conv !== null);
+const convTotal = convDays.length
+  ? convDays.reduce((s,d) => s + d.delta, 0) / convDays.reduce((s,d) => s + d.foryou, 0) * 100 : null;
+const backDays = days.filter(d => d.back !== null && !d.pending);
+const backTotal = backDays.length
+  ? backDays.reduce((s,d) => s + d.likesReceived, 0) / backDays.reduce((s,d) => s + d.total, 0) * 100 : null;
 const cell = (k, n, s) => '<div class="cell"><span class="lab">' + k + '</span><span class="n">' + n + '</span><span class="s">' + s + '</span></div>';
 $("totals").innerHTML = days.length ? [
   cell("いいね総数", nf(sumAll), "おすすめ " + nf(sumFY) + " ／ フォロー中 " + nf(sumFL)),
-  cell("1日あたり", nf(Math.round(sumAll / days.length)), "いいねの平均"),
   cell("フォロワー増加", grow === null ? "—" : (grow >= 0 ? "+" : "") + nf(grow), grow === null ? "2日目から表示" : "計測開始から"),
+  cell("フォロー転換率", pf(convTotal), "フォロワー増 ÷ おすすめいいね"),
+  cell("いいね返し率", pf(backTotal), "被いいね ÷ 送ったいいね（前日まで確定）"),
   cell("計測日数", nf(days.length), "日")
 ].join("") : '<div class="empty">まだ記録がありません</div>';
 
@@ -413,8 +432,11 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
     '<td class="tot">' + nf(d.total) + '</td>' +
     '<td><div class="bar"><i class="a" style="width:' + ((d.foryou||0)/t*100).toFixed(1) + '%"></i>' +
       '<i class="b" style="width:' + ((d.following||0)/t*100).toFixed(1) + '%"></i></div></td>' +
+    '<td>' + (typeof d.likesReceived === "number" ? nf(d.likesReceived) + (d.pending ? '<span class="pend">集計中</span>' : '') : '—') + '</td>' +
+    '<td>' + (d.back === null ? '—' : pf(d.back) + (d.pending ? '<span class="pend">集計中</span>' : '')) + '</td>' +
     '<td>' + nf(d.followers) + '</td>' +
-    '<td>' + chipHTML(d.delta, "sm") + '</td></tr>';
+    '<td>' + chipHTML(d.delta, "sm") + '</td>' +
+    '<td>' + pf(d.conv) + '</td></tr>';
 }).join("");
 
 $("stamp").textContent = "LAST UPDATED " + (DATA.updated || "");

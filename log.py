@@ -19,6 +19,7 @@ def main():
     ap.add_argument("--following", type=int, default=0, help="フォロー中でいいねした数（その日の分に足す）")
     ap.add_argument("--followers", type=int, default=None, help="計測時点のフォロワー数（上書き）")
     ap.add_argument("--following-count", type=int, default=None, help="フォロー中の人数（上書き）")
+    ap.add_argument("--received", type=int, default=None, help="その日の投稿が受け取ったいいね数（上書き）")
     ap.add_argument("--note", default=None)
     ap.add_argument("--replace", action="store_true", help="足し込まずに上書きする")
     a = ap.parse_args()
@@ -43,6 +44,8 @@ def main():
         row["followers"] = a.followers
     if a.following_count is not None:
         row["followingCount"] = a.following_count
+    if a.received is not None:
+        row["likesReceived"] = a.received
     if a.note is not None:
         row["note"] = a.note or None
         if not row["note"]:
