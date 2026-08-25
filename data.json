@@ -42,7 +42,7 @@
       "following": 411,
       "followers": 477,
       "followingCount": 473,
-      "likesReceived": 108,
+      "likesReceived": 110,
       "runs": [
         {
           "t": "08:49",
@@ -111,11 +111,11 @@
     },
     {
       "date": "2026-08-25",
-      "foryou": 295,
-      "following": 159,
-      "followers": 492,
-      "followingCount": 491,
-      "likesReceived": 29,
+      "foryou": 445,
+      "following": 259,
+      "followers": 494,
+      "followingCount": 493,
+      "likesReceived": 37,
       "runs": [
         {
           "t": "00:03",
@@ -155,10 +155,16 @@
           "s": 100,
           "q": "飲食",
           "f": 492
+        },
+        {
+          "t": "12:31",
+          "fy": 150,
+          "fl": 100,
+          "f": 494
         }
       ],
       "search": 100
     }
   ],
-  "updated": "2026-08-25 11:19"
+  "updated": "2026-08-25 12:31"
 }
