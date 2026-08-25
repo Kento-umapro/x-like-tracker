@@ -17,6 +17,8 @@ def main():
     ap.add_argument("--date", default=datetime.now().strftime("%Y-%m-%d"))
     ap.add_argument("--foryou", type=int, default=0, help="おすすめでいいねした数（その日の分に足す）")
     ap.add_argument("--following", type=int, default=0, help="フォロー中でいいねした数（その日の分に足す）")
+    ap.add_argument("--search", type=int, default=0, help="検索結果でいいねした数（その日の分に足す）")
+    ap.add_argument("--q", default=None, help="検索クエリ（--searchと併用）")
     ap.add_argument("--followers", type=int, default=None, help="計測時点のフォロワー数（上書き）")
     ap.add_argument("--following-count", type=int, default=None, help="フォロー中の人数（上書き）")
     ap.add_argument("--received", type=int, default=None, help="その日の投稿が受け取ったいいね数（上書き）")
@@ -33,15 +35,17 @@ def main():
 
     row = next((r for r in days if r["date"] == a.date), None)
     if row is None:
-        row = {"date": a.date, "foryou": 0, "following": 0, "followers": None, "followingCount": None}
+        row = {"date": a.date, "foryou": 0, "following": 0, "search": 0, "followers": None, "followingCount": None}
         days.append(row)
 
     if a.replace:
         row["foryou"] = a.foryou
         row["following"] = a.following
+        row["search"] = a.search
     else:
         row["foryou"] = (row.get("foryou") or 0) + a.foryou
         row["following"] = (row.get("following") or 0) + a.following
+        row["search"] = (row.get("search") or 0) + a.search
 
     if a.followers is not None:
         row["followers"] = a.followers
@@ -49,8 +53,13 @@ def main():
         row["followingCount"] = a.following_count
     if a.received is not None:
         row["likesReceived"] = a.received
-    if not a.no_run and not a.replace and (a.foryou or a.following):
+    if not a.no_run and not a.replace and (a.foryou or a.following or a.search):
         run = {"t": a.time or datetime.now().strftime("%H:%M"), "fy": a.foryou, "fl": a.following}
+        if a.search:
+            run["s"] = a.search
+            run["q"] = a.q or "?"
+        if a.followers is not None:
+            run["f"] = a.followers
         if a.warn:
             run["w"] = 1
         row.setdefault("runs", []).append(run)

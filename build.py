@@ -25,6 +25,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   --vio:#A472FF; --vio-dim:#6A46B8; --vio-ghost:rgba(164,114,255,.13);
   --amb:#FFB247; --amb-dim:#B87A25; --amb-ghost:rgba(255,178,71,.13);
   --mint:#54E5C4; --mint-dim:#2C9C86; --mint-ghost:rgba(84,229,196,.13);
+  --pink:#FF6FB0; --pink-ghost:rgba(255,111,176,.13);
   --pos:#54E5C4; --neg:#FF7A6B;
   --grid:rgba(164,114,255,.10);
   --glow:0 0 0 1px var(--rule), 0 18px 40px -24px rgba(0,0,0,.9);
@@ -37,6 +38,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     --vio:#7A34E0; --vio-dim:#B79BEE; --vio-ghost:rgba(122,52,224,.09);
     --amb:#A96C05; --amb-dim:#E3B876; --amb-ghost:rgba(169,108,5,.10);
     --mint:#0B8E74; --mint-dim:#7FCFBC; --mint-ghost:rgba(11,142,116,.10);
+    --pink:#C2377C; --pink-ghost:rgba(194,55,124,.10);
     --pos:#0B8E74; --neg:#C93B29;
     --grid:rgba(122,52,224,.08);
     --glow:0 0 0 1px var(--rule), 0 14px 34px -26px rgba(21,15,36,.5);
@@ -49,6 +51,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   --vio:#7A34E0; --vio-dim:#B79BEE; --vio-ghost:rgba(122,52,224,.09);
   --amb:#A96C05; --amb-dim:#E3B876; --amb-ghost:rgba(169,108,5,.10);
   --mint:#0B8E74; --mint-dim:#7FCFBC; --mint-ghost:rgba(11,142,116,.10);
+  --pink:#C2377C; --pink-ghost:rgba(194,55,124,.10);
   --pos:#0B8E74; --neg:#C93B29;
   --grid:rgba(122,52,224,.08);
   --glow:0 0 0 1px var(--rule), 0 14px 34px -26px rgba(21,15,36,.5);
@@ -112,12 +115,12 @@ h1 em{font-style:normal; color:var(--vio)}
 
 .split{display:flex; height:9px; border-radius:5px; overflow:hidden; background:var(--sunk); gap:2px}
 .split i{display:block; height:100%; border-radius:2px; transform-origin:left center}
-.split i.a{background:var(--vio)} .split i.b{background:var(--amb)}
+.split i.a{background:var(--vio)} .split i.b{background:var(--amb)} .split i.c{background:var(--pink)}
 .readouts{display:flex; gap:26px; flex-wrap:wrap}
 .readout{display:flex; flex-direction:column; gap:5px; min-width:92px}
 .readout .k{display:flex; align-items:center; gap:6px}
 .dot{width:8px; height:8px; border-radius:2px; flex:none}
-.dot.a{background:var(--vio)} .dot.b{background:var(--amb)} .dot.c{background:var(--mint)}
+.dot.a{background:var(--vio)} .dot.b{background:var(--amb)} .dot.c{background:var(--mint)} .dot.s{background:var(--pink)}
 .readout .n{font-family:"Martian Mono",monospace; font-variant-numeric:tabular-nums; font-size:21px; font-weight:600; line-height:1}
 
 .chip{
@@ -170,6 +173,7 @@ td.runs .runchip b{font-weight:600; color:var(--ink-2)}
 td.runs .runchip i{font-style:normal; font-weight:600; font-variant-numeric:tabular-nums}
 td.runs .runchip i.fy{color:var(--vio)}
 td.runs .runchip i.fl{color:var(--amb)}
+td.runs .runchip i.sq{color:var(--pink)}
 td.runs .runchip.warn{border-color:var(--neg)}
 .pend{
   margin-left:6px; font-size:9px; letter-spacing:.1em; padding:1px 5px; border-radius:4px;
@@ -200,7 +204,7 @@ td.tot{font-weight:700; font-size:14px}
 td .z{color:var(--muted); opacity:.55}
 .bar{display:flex; height:5px; border-radius:3px; overflow:hidden; background:var(--sunk); min-width:86px; gap:1.5px}
 .bar i{display:block; height:100%; border-radius:1.5px}
-.bar i.a{background:var(--vio)} .bar i.b{background:var(--amb)}
+.bar i.a{background:var(--vio)} .bar i.b{background:var(--amb)} .bar i.c{background:var(--pink)}
 
 /* ── note / footer ──────────────────────── */
 .note{
@@ -247,6 +251,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <div class="readouts">
         <div class="readout"><span class="k"><i class="dot a"></i><span class="lab">おすすめ</span></span><span class="n" id="today-fy">—</span></div>
         <div class="readout"><span class="k"><i class="dot b"></i><span class="lab">フォロー中</span></span><span class="n" id="today-fl">—</span></div>
+        <div class="readout"><span class="k"><i class="dot s"></i><span class="lab">検索</span></span><span class="n" id="today-sq">—</span></div>
       </div>
     </div>
     <div class="slab folw">
@@ -266,6 +271,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <div class="legend">
         <span><i class="sw" style="background:var(--vio)"></i>おすすめ</span>
         <span><i class="sw" style="background:var(--amb)"></i>フォロー中</span>
+        <span><i class="sw" style="background:var(--pink)"></i>検索</span>
         <span><i class="sw ln" style="background:var(--mint)"></i>フォロワー数</span>
       </div>
     </div>
@@ -277,10 +283,22 @@ footer{display:flex; justify-content:center; padding-top:6px}
     <div class="ledger">
       <table>
         <thead><tr>
-          <th>日付</th><th>おすすめ</th><th>フォロー中</th><th>合計</th>
+          <th>日付</th><th>おすすめ</th><th>フォロー中</th><th>検索</th><th>合計</th>
           <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th><th>実行時刻</th>
         </tr></thead>
         <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>ソース別の反応</h2><span class="lab" id="src-note">follower attribution</span></div>
+    <div class="ledger">
+      <table style="min-width:560px">
+        <thead><tr>
+          <th>ソース</th><th>いいね数</th><th>フォロワー増（帰属）</th><th>転換率</th>
+        </tr></thead>
+        <tbody id="src-rows"></tbody>
       </table>
     </div>
   </section>
@@ -292,6 +310,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <li>記録の実体は <code>data.json</code>、追記は <code>python3 log.py --foryou 100 --following 50 --followers 447</code></li>
       <li>フォロワーの前日比は、2日目以降から表示されます。</li>
       <li><b>フォロー転換率</b> ＝ フォロワー増加数 ÷ おすすめでいいねした数。<b>いいね返し率</b> ＝ その日の投稿（朝7時・夕方17時ごろの2本）が受け取ったいいね ÷ その日に送ったいいね総数。今日の分の被いいねはまだ伸びるので「集計中」、確定は前日までです。</li>
+      <li><b>ソース別の反応</b>は、各ラン直後に実測したフォロワー数の増分を、そのランのいいね件数比で「おすすめ／フォロー中／検索:◯◯」に割り当てた目安です。いいね→フォローは半日〜1日遅れて効くことがあるので、傾向を見る参考値として使ってください。</li>
       <li><b>実行時刻</b>のチップは1回の自動いいね（<span style="color:var(--vio);font-weight:700">紫＝おすすめ</span>／<span style="color:var(--amb);font-weight:700">琥珀＝フォロー中</span>の件数）。赤枠はXの自動化警告で途中停止したランです。</li>
     </ul>
   </div>
@@ -313,7 +332,7 @@ const $ = id => document.getElementById(id);
 const NOW = new Date();
 const TODAY = NOW.getFullYear() + "-" + String(NOW.getMonth()+1).padStart(2,"0") + "-" + String(NOW.getDate()).padStart(2,"0");
 days.forEach((d, i) => {
-  d.total = (d.foryou || 0) + (d.following || 0);
+  d.total = (d.foryou || 0) + (d.following || 0) + (d.search || 0);
   const p = i > 0 ? days[i-1] : null;
   d.delta = (p && typeof p.followers === "number" && typeof d.followers === "number")
     ? d.followers - p.followers : null;
@@ -346,10 +365,12 @@ if (last){
   $("today-total").innerHTML = nf(last.total) + '<span class="unit">件</span>';
   $("today-fy").textContent = nf(last.foryou);
   $("today-fl").textContent = nf(last.following);
+  $("today-sq").textContent = nf(last.search || 0);
   const t = last.total || 1;
   $("today-split").innerHTML =
     '<i class="a" style="width:' + ((last.foryou||0)/t*100).toFixed(1) + '%"></i>' +
-    '<i class="b" style="width:' + ((last.following||0)/t*100).toFixed(1) + '%"></i>';
+    '<i class="b" style="width:' + ((last.following||0)/t*100).toFixed(1) + '%"></i>' +
+    '<i class="c" style="width:' + ((last.search||0)/t*100).toFixed(1) + '%"></i>';
   $("folw-num").textContent = nf(last.followers);
   $("folw-chip").innerHTML = chipHTML(last.delta, "sm");
   $("folw-ing").textContent = nf(last.followingCount);
@@ -359,6 +380,7 @@ if (last){
 const sumAll = days.reduce((s,d) => s + d.total, 0);
 const sumFY  = days.reduce((s,d) => s + (d.foryou||0), 0);
 const sumFL  = days.reduce((s,d) => s + (d.following||0), 0);
+const sumSQ  = days.reduce((s,d) => s + (d.search||0), 0);
 const grow = (days.length > 1 && typeof days[0].followers === "number" && typeof last.followers === "number")
   ? last.followers - days[0].followers : null;
 const convDays = days.filter(d => d.conv !== null);
@@ -369,7 +391,7 @@ const backTotal = backDays.length
   ? backDays.reduce((s,d) => s + d.likesReceived, 0) / backDays.reduce((s,d) => s + d.total, 0) * 100 : null;
 const cell = (k, n, s) => '<div class="cell"><span class="lab">' + k + '</span><span class="n">' + n + '</span><span class="s">' + s + '</span></div>';
 $("totals").innerHTML = days.length ? [
-  cell("いいね総数", nf(sumAll), "おすすめ " + nf(sumFY) + " ／ フォロー中 " + nf(sumFL)),
+  cell("いいね総数", nf(sumAll), "おすすめ " + nf(sumFY) + " ／ フォロー中 " + nf(sumFL) + " ／ 検索 " + nf(sumSQ)),
   cell("フォロワー増加", grow === null ? "—" : (grow >= 0 ? "+" : "") + nf(grow), grow === null ? "2日目から表示" : "計測開始から"),
   cell("フォロー転換率", pf(convTotal), "フォロワー増 ÷ おすすめいいね"),
   cell("いいね返し率", pf(backTotal), "被いいね ÷ 送ったいいね（前日まで確定）"),
@@ -409,10 +431,11 @@ $("totals").innerHTML = days.length ? [
 
   days.forEach((d, i) => {
     const x = cx(i) - bw/2, base = PT + ih;
-    const hA = (d.foryou||0)/topY*ih, hB = (d.following||0)/topY*ih;
+    const hA = (d.foryou||0)/topY*ih, hB = (d.following||0)/topY*ih, hC = (d.search||0)/topY*ih;
     s += '<g class="grow" style="animation-delay:' + (i*0.045).toFixed(2) + 's">';
     if (hA > 0.6) s += '<rect x="' + x + '" y="' + (base-hA) + '" width="' + bw + '" height="' + hA + '" fill="var(--vio)" rx="2.5"/>';
     if (hB > 0.6) s += '<rect x="' + x + '" y="' + (base-hA-hB-2) + '" width="' + bw + '" height="' + hB + '" fill="var(--amb)" rx="2.5"/>';
+    if (hC > 0.6) s += '<rect x="' + x + '" y="' + (base-hA-hB-hC-4) + '" width="' + bw + '" height="' + hC + '" fill="var(--pink)" rx="2.5"/>';
     s += '</g>';
     const show = n <= 16 || i % Math.ceil(n/14) === 0 || i === n-1;
     if (show) s += '<text x="' + cx(i) + '" y="' + (H-14) + '" text-anchor="middle" font-family="Martian Mono, monospace" font-size="9.5" font-weight="500" fill="var(--muted)">' + mmdd(d.date) + '</text>';
@@ -448,9 +471,11 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
       (d.note ? '<span class="bg">' + d.note + '</span>' : '') + '</td>' +
     '<td>' + z(d.foryou) + '</td>' +
     '<td>' + z(d.following) + '</td>' +
+    '<td>' + z(d.search) + '</td>' +
     '<td class="tot">' + nf(d.total) + '</td>' +
     '<td><div class="bar"><i class="a" style="width:' + ((d.foryou||0)/t*100).toFixed(1) + '%"></i>' +
-      '<i class="b" style="width:' + ((d.following||0)/t*100).toFixed(1) + '%"></i></div></td>' +
+      '<i class="b" style="width:' + ((d.following||0)/t*100).toFixed(1) + '%"></i>' +
+      '<i class="c" style="width:' + ((d.search||0)/t*100).toFixed(1) + '%"></i></div></td>' +
     '<td>' + (typeof d.likesReceived === "number" ? nf(d.likesReceived) + (d.pending ? '<span class="pend">集計中</span>' : '') : '—') + '</td>' +
     '<td>' + (d.back === null ? '—' : pf(d.back) + (d.pending ? '<span class="pend">集計中</span>' : '')) + '</td>' +
     '<td>' + nf(d.followers) + '</td>' +
@@ -459,8 +484,44 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
     '<td class="runs">' + ((d.runs && d.runs.length) ? d.runs.map(r =>
       '<span class="runchip' + (r.w ? ' warn' : '') + '"><b>' + r.t + '</b>' +
       (r.fy ? '<i class="fy">' + r.fy + '</i>' : '') +
-      (r.fl ? '<i class="fl">' + r.fl + '</i>' : '') + '</span>').join('') : '—') + '</td></tr>';
+      (r.fl ? '<i class="fl">' + r.fl + '</i>' : '') +
+      (r.s ? '<i class="sq">' + r.s + (r.q ? ':' + r.q : '') + '</i>' : '') + '</span>').join('') : '—') + '</td></tr>';
 }).join("");
+
+(function sources(){
+  const allRuns = [];
+  days.forEach(d => (d.runs||[]).forEach(r => allRuns.push({date:d.date, ...r})));
+  const agg = {};  // key -> {likes, delta}
+  const add = (key, likes, delta) => {
+    if (!agg[key]) agg[key] = {likes:0, delta:0, hasF:false};
+    agg[key].likes += likes;
+    if (delta !== null){ agg[key].delta += delta; agg[key].hasF = true; }
+  };
+  let prevF = days.length && typeof days[0].followers === "number" && days[0].runs && days[0].runs.length && typeof days[0].runs[0].f === "number"
+    ? null : null;
+  prevF = 447;
+  allRuns.forEach(r => {
+    const likes = (r.fy||0) + (r.fl||0) + (r.s||0);
+    if (!likes) return;
+    let delta = null;
+    if (typeof r.f === "number"){ delta = r.f - prevF; prevF = r.f; }
+    const parts = [];
+    if (r.fy) parts.push(["おすすめ", r.fy]);
+    if (r.fl) parts.push(["フォロー中", r.fl]);
+    if (r.s) parts.push(["検索:" + (r.q||"?"), r.s]);
+    parts.forEach(([key, n]) => {
+      const share = (delta === null) ? null : delta * n / likes;
+      add(key, n, share);
+    });
+  });
+  const rows = Object.entries(agg).sort((a,b) => b[1].likes - a[1].likes).map(([key, v]) => {
+    const conv = (v.hasF && v.likes) ? v.delta / v.likes * 100 : null;
+    const dTxt = v.hasF ? ((v.delta >= 0 ? "+" : "") + (Math.round(v.delta*10)/10)) : "—";
+    return '<tr><td class="d">' + key + '</td><td>' + nf(v.likes) + '</td><td>' + dTxt + '</td><td>' + pf(conv) + '</td></tr>';
+  }).join('');
+  $("src-rows").innerHTML = rows || '<tr><td class="d" colspan="4">まだ記録がありません</td></tr>';
+  $("src-note").textContent = "実測スナップショットのある " + allRuns.filter(r => typeof r.f === "number").length + " ラン分";
+})();
 
 $("stamp").textContent = "LAST UPDATED " + (DATA.updated || "");
 </script>
