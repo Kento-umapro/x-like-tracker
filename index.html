@@ -153,9 +153,32 @@ h2{font-family:"Dela Gothic One","Zen Kaku Gothic New",sans-serif; font-weight:4
   @keyframes trace{to{stroke-dashoffset:0}}
 }
 
+/* ── run log ────────────────────────────── */
+.runlog{display:flex; flex-direction:column; gap:10px}
+.runday{
+  background:var(--panel); border-radius:14px; box-shadow:var(--glow);
+  padding:14px 18px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px;
+}
+.runday .rd{
+  font-family:"Martian Mono",monospace; font-size:12px; font-weight:700; color:var(--ink);
+  min-width:72px;
+}
+.runday .rd small{display:block; font-size:9px; font-weight:500; color:var(--muted); letter-spacing:.1em}
+.runday .runchip{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--sunk); border:1px solid var(--rule); border-radius:7px; padding:4px 9px;
+  font-size:12px; white-space:nowrap;
+}
+.runday .runchip b{font-family:"Martian Mono",monospace; font-weight:600; color:var(--ink)}
+.runday .runchip i{font-style:normal; font-weight:700; font-variant-numeric:tabular-nums; font-family:"Martian Mono",monospace; font-size:12px}
+.runday .runchip i.fy{color:var(--vio)}
+.runday .runchip i.fl{color:var(--amb)}
+.runday .runchip i.sq{color:var(--pink)}
+.runday .runchip.warn{border-color:var(--neg); box-shadow:inset 0 0 0 1px var(--neg)}
+
 /* ── ledger ─────────────────────────────── */
 .ledger{background:var(--panel); border-radius:14px; box-shadow:var(--glow); overflow-x:auto}
-table{border-collapse:collapse; width:100%; min-width:1150px}
+table{border-collapse:collapse; width:100%; min-width:900px}
 td.runs{text-align:left; max-width:300px}
 td.runs .runchip{
   display:inline-flex; align-items:center; gap:5px; margin:2px 4px 2px 0;
@@ -272,12 +295,17 @@ footer{display:flex; justify-content:center; padding-top:6px}
   </section>
 
   <section>
+    <div class="sec-head"><h2>実行ログ</h2><span class="lab">いつ・どこで・何件いいねしたか</span></div>
+    <div class="runlog" id="runlog"></div>
+  </section>
+
+  <section>
     <div class="sec-head"><h2>日別の記録</h2><span class="lab" id="row-count"></span></div>
     <div class="ledger">
       <table>
         <thead><tr>
           <th>日付</th><th>おすすめ</th><th>フォロー中</th><th>検索</th><th>合計</th>
-          <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th><th>実行時刻</th>
+          <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -304,7 +332,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <li>フォロワーの前日比は、2日目以降から表示されます。</li>
       <li><b>フォロー転換率</b> ＝ フォロワー増加数 ÷ おすすめでいいねした数。<b>いいね返し率</b> ＝ その日の投稿（朝7時・夕方17時ごろの2本）が受け取ったいいね ÷ その日に送ったいいね総数。今日の分の被いいねはまだ伸びるので「集計中」、確定は前日までです。</li>
       <li><b>ソース別の反応</b>は、各ラン直後に実測したフォロワー数の増分を、そのランのいいね件数比で「おすすめ／フォロー中／検索:◯◯」に割り当てた目安です。いいね→フォローは半日〜1日遅れて効くことがあるので、傾向を見る参考値として使ってください。</li>
-      <li><b>実行時刻</b>のチップは1回の自動いいね（<span style="color:var(--vio);font-weight:700">紫＝おすすめ</span>／<span style="color:var(--amb);font-weight:700">琥珀＝フォロー中</span>の件数）。赤枠はXの自動化警告で途中停止したランです。</li>
+      <li><b>実行ログ</b>のチップは1回の自動いいね（<span style="color:var(--vio);font-weight:700">紫＝おすすめ</span>／<span style="color:var(--amb);font-weight:700">琥珀＝フォロー中</span>の件数）。赤枠はXの自動化警告で途中停止したランです。</li>
     </ul>
   </div>
 
@@ -454,6 +482,18 @@ $("totals").innerHTML = days.length ? [
   host.innerHTML = s + '</svg>';
 })();
 
+/* ── run log ── */
+$("runlog").innerHTML = days.slice().reverse().map(d => {
+  const chips = (d.runs || []).map(r =>
+    '<span class="runchip' + (r.w ? ' warn' : '') + '"><b>' + r.t + '</b>' +
+    (r.fy ? '<i class="fy">' + r.fy + '</i>' : '') +
+    (r.fl ? '<i class="fl">' + r.fl + '</i>' : '') +
+    (r.s ? '<i class="sq">' + r.s + (r.q ? ':' + r.q : '') + '</i>' : '') + '</span>'
+  ).join('');
+  return '<div class="runday"><span class="rd">' + mmdd(d.date) + '<small>' + dow(d.date) + '曜・' +
+    ((d.runs||[]).length) + 'ラン</small></span>' + (chips || '<span class="lab">記録なし</span>') + '</div>';
+}).join('');
+
 /* ── ledger ── */
 $("row-count").textContent = days.length + " ROWS";
 $("rows").innerHTML = days.slice().reverse().map((d, i) => {
@@ -473,12 +513,7 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
     '<td>' + (d.back === null ? '—' : pf(d.back) + (d.pending ? '<span class="pend">集計中</span>' : '')) + '</td>' +
     '<td>' + nf(d.followers) + '</td>' +
     '<td>' + chipHTML(d.delta, "sm") + '</td>' +
-    '<td>' + pf(d.conv) + '</td>' +
-    '<td class="runs">' + ((d.runs && d.runs.length) ? d.runs.map(r =>
-      '<span class="runchip' + (r.w ? ' warn' : '') + '"><b>' + r.t + '</b>' +
-      (r.fy ? '<i class="fy">' + r.fy + '</i>' : '') +
-      (r.fl ? '<i class="fl">' + r.fl + '</i>' : '') +
-      (r.s ? '<i class="sq">' + r.s + (r.q ? ':' + r.q : '') + '</i>' : '') + '</span>').join('') : '—') + '</td></tr>';
+    '<td>' + pf(d.conv) + '</td></tr>';
 }).join("");
 
 (function sources(){
