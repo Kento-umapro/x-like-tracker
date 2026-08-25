@@ -42,7 +42,7 @@
       "following": 411,
       "followers": 477,
       "followingCount": 473,
-      "likesReceived": 133,
+      "likesReceived": 134,
       "runs": [
         {
           "t": "08:49",
@@ -111,11 +111,11 @@
     },
     {
       "date": "2026-08-25",
-      "foryou": 1144,
-      "following": 440,
-      "followers": 510,
-      "followingCount": 506,
-      "likesReceived": 84,
+      "foryou": 1240,
+      "following": 485,
+      "followers": 512,
+      "followingCount": 510,
+      "likesReceived": 97,
       "runs": [
         {
           "t": "00:03",
@@ -215,10 +215,16 @@
           "fy": 98,
           "fl": 50,
           "f": 510
+        },
+        {
+          "t": "20:34",
+          "fy": 96,
+          "fl": 45,
+          "f": 512
         }
       ],
       "search": 100
     }
   ],
-  "updated": "2026-08-25 19:22"
+  "updated": "2026-08-25 20:34"
 }
