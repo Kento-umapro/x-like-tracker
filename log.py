@@ -20,6 +20,9 @@ def main():
     ap.add_argument("--followers", type=int, default=None, help="計測時点のフォロワー数（上書き）")
     ap.add_argument("--following-count", type=int, default=None, help="フォロー中の人数（上書き）")
     ap.add_argument("--received", type=int, default=None, help="その日の投稿が受け取ったいいね数（上書き）")
+    ap.add_argument("--time", default=None, help="実行時刻 HH:MM（省略時は現在時刻）")
+    ap.add_argument("--warn", action="store_true", help="警告で停止したランとして記録")
+    ap.add_argument("--no-run", action="store_true", help="実行履歴に追記しない（数値修正のみ）")
     ap.add_argument("--note", default=None)
     ap.add_argument("--replace", action="store_true", help="足し込まずに上書きする")
     a = ap.parse_args()
@@ -46,6 +49,11 @@ def main():
         row["followingCount"] = a.following_count
     if a.received is not None:
         row["likesReceived"] = a.received
+    if not a.no_run and not a.replace and (a.foryou or a.following):
+        run = {"t": a.time or datetime.now().strftime("%H:%M"), "fy": a.foryou, "fl": a.following}
+        if a.warn:
+            run["w"] = 1
+        row.setdefault("runs", []).append(run)
     if a.note is not None:
         row["note"] = a.note or None
         if not row["note"]:

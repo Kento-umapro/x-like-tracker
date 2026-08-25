@@ -159,7 +159,18 @@ h2{font-family:"Dela Gothic One","Zen Kaku Gothic New",sans-serif; font-weight:4
 
 /* ── ledger ─────────────────────────────── */
 .ledger{background:var(--panel); border-radius:14px; box-shadow:var(--glow); overflow-x:auto}
-table{border-collapse:collapse; width:100%; min-width:900px}
+table{border-collapse:collapse; width:100%; min-width:1150px}
+td.runs{text-align:left; max-width:300px}
+td.runs .runchip{
+  display:inline-flex; align-items:center; gap:5px; margin:2px 4px 2px 0;
+  background:var(--sunk); border:1px solid var(--rule); border-radius:5px; padding:2px 7px;
+  font-size:10.5px; white-space:nowrap;
+}
+td.runs .runchip b{font-weight:600; color:var(--ink-2)}
+td.runs .runchip i{font-style:normal; font-weight:600; font-variant-numeric:tabular-nums}
+td.runs .runchip i.fy{color:var(--vio)}
+td.runs .runchip i.fl{color:var(--amb)}
+td.runs .runchip.warn{border-color:var(--neg)}
 .pend{
   margin-left:6px; font-size:9px; letter-spacing:.1em; padding:1px 5px; border-radius:4px;
   background:var(--amb-ghost); color:var(--amb); font-weight:600; vertical-align:1px;
@@ -267,7 +278,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <table>
         <thead><tr>
           <th>日付</th><th>おすすめ</th><th>フォロー中</th><th>合計</th>
-          <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th>
+          <th>内訳</th><th>被いいね</th><th>返し率</th><th>フォロワー</th><th>前日比</th><th>転換率</th><th>実行時刻</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -281,6 +292,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <li>記録の実体は <code>data.json</code>、追記は <code>python3 log.py --foryou 100 --following 50 --followers 447</code></li>
       <li>フォロワーの前日比は、2日目以降から表示されます。</li>
       <li><b>フォロー転換率</b> ＝ フォロワー増加数 ÷ おすすめでいいねした数。<b>いいね返し率</b> ＝ その日の投稿（朝7時・夕方17時ごろの2本）が受け取ったいいね ÷ その日に送ったいいね総数。今日の分の被いいねはまだ伸びるので「集計中」、確定は前日までです。</li>
+      <li><b>実行時刻</b>のチップは1回の自動いいね（<span style="color:var(--vio);font-weight:700">紫＝おすすめ</span>／<span style="color:var(--amb);font-weight:700">琥珀＝フォロー中</span>の件数）。赤枠はXの自動化警告で途中停止したランです。</li>
     </ul>
   </div>
 
@@ -443,7 +455,11 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
     '<td>' + (d.back === null ? '—' : pf(d.back) + (d.pending ? '<span class="pend">集計中</span>' : '')) + '</td>' +
     '<td>' + nf(d.followers) + '</td>' +
     '<td>' + chipHTML(d.delta, "sm") + '</td>' +
-    '<td>' + pf(d.conv) + '</td></tr>';
+    '<td>' + pf(d.conv) + '</td>' +
+    '<td class="runs">' + ((d.runs && d.runs.length) ? d.runs.map(r =>
+      '<span class="runchip' + (r.w ? ' warn' : '') + '"><b>' + r.t + '</b>' +
+      (r.fy ? '<i class="fy">' + r.fy + '</i>' : '') +
+      (r.fl ? '<i class="fl">' + r.fl + '</i>' : '') + '</span>').join('') : '—') + '</td></tr>';
 }).join("");
 
 $("stamp").textContent = "LAST UPDATED " + (DATA.updated || "");
