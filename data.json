@@ -112,10 +112,10 @@
     {
       "date": "2026-08-25",
       "foryou": 1240,
-      "following": 485,
-      "followers": 515,
-      "followingCount": 514,
-      "likesReceived": 106,
+      "following": 533,
+      "followers": 518,
+      "followingCount": 516,
+      "likesReceived": 116,
       "runs": [
         {
           "t": "00:03",
@@ -229,10 +229,18 @@
           "s": 96,
           "q": "相互フォロー",
           "f": 515
+        },
+        {
+          "t": "22:55",
+          "fy": 0,
+          "fl": 48,
+          "s": 97,
+          "q": "相互フォロー",
+          "f": 518
         }
       ],
-      "search": 196
+      "search": 293
     }
   ],
-  "updated": "2026-08-25 21:39"
+  "updated": "2026-08-25 22:55"
 }
