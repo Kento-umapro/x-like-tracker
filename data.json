@@ -17,15 +17,16 @@
       "following": 411,
       "followers": 477,
       "followingCount": 473,
-      "likesReceived": 86
+      "likesReceived": 102
     },
     {
       "date": "2026-08-25",
-      "foryou": 50,
-      "following": 30,
-      "followers": 478,
-      "followingCount": 477
+      "foryou": 150,
+      "following": 130,
+      "followers": 490,
+      "followingCount": 491,
+      "likesReceived": 19
     }
   ],
-  "updated": "2026-08-25 00:16"
+  "updated": "2026-08-25 09:10"
 }
