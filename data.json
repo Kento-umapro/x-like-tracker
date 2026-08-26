@@ -115,7 +115,7 @@
       "following": 533,
       "followers": 518,
       "followingCount": 516,
-      "likesReceived": 138,
+      "likesReceived": 139,
       "runs": [
         {
           "t": "00:03",
@@ -243,10 +243,10 @@
     },
     {
       "date": "2026-08-26",
-      "foryou": 347,
-      "following": 218,
-      "search": 0,
-      "followers": 529,
+      "foryou": 443,
+      "following": 281,
+      "search": 19,
+      "followers": 530,
       "followingCount": 524,
       "runs": [
         {
@@ -272,10 +272,24 @@
           "fy": 59,
           "fl": 0,
           "f": 529
+        },
+        {
+          "t": "13:57",
+          "fy": 96,
+          "fl": 63,
+          "f": 530
+        },
+        {
+          "t": "13:57",
+          "fy": 0,
+          "fl": 0,
+          "s": 19,
+          "q": "クレープ遠藤",
+          "f": 530
         }
       ],
-      "likesReceived": 36
+      "likesReceived": 42
     }
   ],
-  "updated": "2026-08-26 12:29"
+  "updated": "2026-08-26 13:57"
 }
