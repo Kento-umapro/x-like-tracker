@@ -344,10 +344,10 @@
       "date": "2026-08-27",
       "foryou": 386,
       "following": 187,
-      "search": 0,
-      "followers": 541,
+      "search": 80,
+      "followers": 542,
       "followingCount": 538,
-      "likesReceived": 18,
+      "likesReceived": 20,
       "runs": [
         {
           "t": "09:54",
@@ -379,9 +379,17 @@
           "fy": 100,
           "fl": 30,
           "f": 541
+        },
+        {
+          "t": "17:01",
+          "fy": 0,
+          "fl": 0,
+          "s": 80,
+          "q": "フォロー返し",
+          "f": 542
         }
       ]
     }
   ],
-  "updated": "2026-08-27 15:01"
+  "updated": "2026-08-27 17:01"
 }
