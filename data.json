@@ -338,8 +338,26 @@
           "f": 539
         }
       ],
-      "likesReceived": 105
+      "likesReceived": 123
+    },
+    {
+      "date": "2026-08-27",
+      "foryou": 95,
+      "following": 77,
+      "search": 0,
+      "followers": 536,
+      "followingCount": 537,
+      "likesReceived": 3,
+      "runs": [
+        {
+          "t": "09:54",
+          "fy": 95,
+          "fl": 77,
+          "f": 536,
+          "w": 1
+        }
+      ]
     }
   ],
-  "updated": "2026-08-26 23:26"
+  "updated": "2026-08-27 09:54"
 }
