@@ -415,7 +415,7 @@
       "search": 0,
       "followers": 562,
       "followingCount": 563,
-      "likesReceived": 66,
+      "likesReceived": 79,
       "runs": [
         {
           "t": "09:02",
@@ -478,7 +478,24 @@
           "f": 562
         }
       ]
+    },
+    {
+      "date": "2026-08-29",
+      "foryou": 120,
+      "following": 40,
+      "search": 0,
+      "followers": 568,
+      "followingCount": 563,
+      "likesReceived": 12,
+      "runs": [
+        {
+          "t": "08:55",
+          "fy": 120,
+          "fl": 40,
+          "f": 568
+        }
+      ]
     }
   ],
-  "updated": "2026-08-28 22:00"
+  "updated": "2026-08-29 08:55"
 }
