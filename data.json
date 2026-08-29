@@ -481,21 +481,27 @@
     },
     {
       "date": "2026-08-29",
-      "foryou": 120,
-      "following": 40,
+      "foryou": 260,
+      "following": 80,
       "search": 0,
-      "followers": 568,
-      "followingCount": 563,
-      "likesReceived": 12,
+      "followers": 573,
+      "followingCount": 573,
+      "likesReceived": 17,
       "runs": [
         {
           "t": "08:55",
           "fy": 120,
           "fl": 40,
           "f": 568
+        },
+        {
+          "t": "12:53",
+          "fy": 140,
+          "fl": 40,
+          "f": 573
         }
       ]
     }
   ],
-  "updated": "2026-08-29 08:55"
+  "updated": "2026-08-29 12:53"
 }
