@@ -331,6 +331,18 @@ footer{display:flex; justify-content:center; padding-top:6px}
     </div>
   </section>
 
+  <section>
+    <div class="sec-head"><h2>検索ワード別</h2><span class="lab" id="q-note">query comparison</span></div>
+    <div class="ledger">
+      <table style="min-width:720px">
+        <thead><tr>
+          <th>検索ワード</th><th>ラン</th><th>いいね数</th><th>フォロワー増（帰属）</th><th>フォロー返し率</th><th>被いいね（帰属）</th><th>被いいね率</th>
+        </tr></thead>
+        <tbody id="q-rows"></tbody>
+      </table>
+    </div>
+  </section>
+
   <div class="note">
     <span class="lab">更新のしかた</span>
     <ul>
@@ -339,6 +351,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
       <li>フォロワーの前日比は、2日目以降から表示されます。</li>
       <li><b>フォロー転換率</b> ＝ フォロワー増加数 ÷ おすすめでいいねした数。<b>いいね返し率</b> ＝ その日の投稿（朝7時・夕方17時ごろの2本）が受け取ったいいね ÷ その日に送ったいいね総数。今日の分の被いいねはまだ伸びるので「集計中」、確定は前日までです。</li>
       <li><b>ソース別の反応</b>は、各ラン直後に実測したフォロワー数の増分を、そのランのいいね件数比で「おすすめ／フォロー中／検索:◯◯」に割り当てた目安です。いいね→フォローは半日〜1日遅れて効くことがあるので、傾向を見る参考値として使ってください。</li>
+      <li><b>検索ワード別</b>は、検索でいいねしたランだけを検索ワードごとにまとめたものです。<b>被いいね（帰属）</b>は、その日に受け取ったいいねを、その日に送ったいいね全体に対する検索分の比で按分した目安。<b>被いいね率</b>＝被いいね（帰属）÷ そのワードで送ったいいね数。ワードごとの刺さり方を比べる指標です。</li>
       <li><b>実行ログ</b>のチップは1回の自動いいね（<span style="color:var(--vio);font-weight:700">紫＝おすすめ</span>／<span style="color:var(--amb);font-weight:700">琥珀＝フォロー中</span>の件数）。赤枠はXの自動化警告で途中停止したランです。</li>
     </ul>
   </div>
@@ -556,6 +569,45 @@ $("rows").innerHTML = days.slice().reverse().map((d, i) => {
   }).join('');
   $("src-rows").innerHTML = rows || '<tr><td class="d" colspan="4">まだ記録がありません</td></tr>';
   $("src-note").textContent = "実測スナップショットのある " + allRuns.filter(r => typeof r.f === "number").length + " ラン分";
+})();
+
+(function queries(){
+  const byDate = {};
+  days.forEach(d => byDate[d.date] = d);
+  const agg = {};   // query -> {runs, likes, delta, recv, hasF}
+  const add = (q, likes, delta, recv) => {
+    if (!agg[q]) agg[q] = {runs:0, likes:0, delta:0, recv:0, hasF:false};
+    const a = agg[q];
+    a.runs += 1; a.likes += likes; a.recv += recv;
+    if (delta !== null){ a.delta += delta; a.hasF = true; }
+  };
+  let prevF = 447;
+  days.forEach(d => {
+    const dayLikes = (d.foryou||0) + (d.following||0) + (d.search||0);
+    const dayRecv  = (typeof d.likesReceived === "number") ? d.likesReceived : 0;
+    (d.runs||[]).forEach(r => {
+      const likes = (r.fy||0) + (r.fl||0) + (r.s||0);
+      if (!likes) return;
+      let delta = null;
+      if (typeof r.f === "number"){ delta = r.f - prevF; prevF = r.f; }
+      if (!r.s) return;                       // 検索ランのみ集計
+      const share = r.s / likes;              // このランの中で検索が占める割合
+      const dShare = (delta === null) ? null : delta * share;
+      const rShare = dayLikes ? dayRecv * (r.s / dayLikes) : 0;
+      add(r.q || "?", r.s, dShare, rShare);
+    });
+  });
+  const rows = Object.entries(agg).sort((a,b) => b[1].likes - a[1].likes).map(([q, v]) => {
+    const conv = (v.hasF && v.likes) ? v.delta / v.likes * 100 : null;
+    const back = v.likes ? v.recv / v.likes * 100 : null;
+    const dTxt = v.hasF ? ((v.delta >= 0 ? "+" : "") + (Math.round(v.delta*10)/10)) : "—";
+    return '<tr><td class="d">' + q + '</td><td>' + v.runs + '</td><td>' + nf(v.likes) +
+      '</td><td>' + dTxt + '</td><td>' + pf(conv) +
+      '</td><td>' + (Math.round(v.recv*10)/10) + '</td><td>' + pf(back) + '</td></tr>';
+  }).join('');
+  $("q-rows").innerHTML = rows || '<tr><td class="d" colspan="7">まだ検索ランの記録がありません</td></tr>';
+  const n = Object.keys(agg).length;
+  $("q-note").textContent = n ? (n + " ワード / 被いいねは日次の按分") : "query comparison";
 })();
 
 $("stamp").textContent = "LAST UPDATED " + (DATA.updated || "");
