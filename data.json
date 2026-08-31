@@ -581,12 +581,12 @@
     },
     {
       "date": "2026-08-31",
-      "foryou": 470,
-      "following": 80,
+      "foryou": 560,
+      "following": 120,
       "search": 596,
-      "followers": 594,
+      "followers": 597,
       "followingCount": 593,
-      "likesReceived": 67,
+      "likesReceived": 74,
       "runs": [
         {
           "t": "09:09",
@@ -678,9 +678,15 @@
           "s": 40,
           "q": "タブ:Real Estate",
           "f": 594
+        },
+        {
+          "t": "18:34",
+          "fy": 90,
+          "fl": 40,
+          "f": 597
         }
       ]
     }
   ],
-  "updated": "2026-08-31 19:10"
+  "updated": "2026-08-31 18:34"
 }
