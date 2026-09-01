@@ -711,10 +711,10 @@
       "date": "2026-09-01",
       "foryou": 219,
       "following": 63,
-      "search": 0,
-      "followers": 601,
-      "followingCount": 597,
-      "likesReceived": 13,
+      "search": 167,
+      "followers": 603,
+      "followingCount": 600,
+      "likesReceived": 26,
       "runs": [
         {
           "t": "00:19",
@@ -728,6 +728,43 @@
           "fl": 23,
           "f": 601,
           "w": 1
+        },
+        {
+          "t": "08:38",
+          "fy": 0,
+          "fl": 0,
+          "s": 40,
+          "q": "タブ:Business"
+        },
+        {
+          "t": "08:47",
+          "fy": 0,
+          "fl": 0,
+          "s": 37,
+          "q": "タブ:Tech"
+        },
+        {
+          "t": "08:56",
+          "fy": 0,
+          "fl": 0,
+          "s": 40,
+          "q": "タブ:AI"
+        },
+        {
+          "t": "09:05",
+          "fy": 0,
+          "fl": 0,
+          "s": 38,
+          "q": "タブ:Food"
+        },
+        {
+          "t": "09:12",
+          "fy": 0,
+          "fl": 0,
+          "s": 12,
+          "q": "タブ:Music",
+          "w": 1,
+          "f": 603
         }
       ]
     }
