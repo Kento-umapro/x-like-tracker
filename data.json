@@ -709,12 +709,12 @@
     },
     {
       "date": "2026-09-01",
-      "foryou": 219,
-      "following": 63,
+      "foryou": 353,
+      "following": 103,
       "search": 167,
       "followers": 603,
       "followingCount": 600,
-      "likesReceived": 26,
+      "likesReceived": 34,
       "runs": [
         {
           "t": "00:19",
@@ -765,9 +765,15 @@
           "q": "タブ:Music",
           "w": 1,
           "f": 603
+        },
+        {
+          "t": "11:59",
+          "fy": 134,
+          "fl": 40,
+          "f": 603
         }
       ]
     }
   ],
-  "updated": "2026-09-01 08:15"
+  "updated": "2026-09-01 11:59"
 }
