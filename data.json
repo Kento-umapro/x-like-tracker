@@ -807,8 +807,8 @@
     },
     {
       "date": "2026-09-02",
-      "foryou": 334,
-      "following": 70,
+      "foryou": 518,
+      "following": 96,
       "search": 0,
       "followers": 609,
       "followingCount": 607,
@@ -830,9 +830,14 @@
           "fy": 86,
           "fl": 30,
           "f": 609
+        },
+        {
+          "t": "22:29",
+          "fy": 184,
+          "fl": 26
         }
       ]
     }
   ],
-  "updated": "2026-09-02 12:11"
+  "updated": "2026-09-02 22:29"
 }
