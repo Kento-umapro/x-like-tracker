@@ -807,21 +807,32 @@
     },
     {
       "date": "2026-09-02",
-      "foryou": 140,
-      "following": 40,
+      "foryou": 334,
+      "following": 70,
       "search": 0,
-      "followers": 608,
+      "followers": 609,
       "followingCount": 607,
-      "likesReceived": 12,
+      "likesReceived": 22,
       "runs": [
         {
           "t": "09:07",
           "fy": 140,
           "fl": 40,
           "f": 608
+        },
+        {
+          "t": "10:47",
+          "fy": 108,
+          "fl": 0
+        },
+        {
+          "t": "12:11",
+          "fy": 86,
+          "fl": 30,
+          "f": 609
         }
       ]
     }
   ],
-  "updated": "2026-09-02 09:11"
+  "updated": "2026-09-02 12:11"
 }
