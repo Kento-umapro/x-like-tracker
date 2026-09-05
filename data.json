@@ -942,21 +942,27 @@
     },
     {
       "date": "2026-09-05",
-      "foryou": 140,
-      "following": 40,
+      "foryou": 280,
+      "following": 70,
       "search": 0,
-      "followers": 626,
-      "followingCount": 623,
-      "likesReceived": 12,
+      "followers": 627,
+      "followingCount": 628,
+      "likesReceived": 19,
       "runs": [
         {
           "t": "09:04",
           "fy": 140,
           "fl": 40,
           "f": 626
+        },
+        {
+          "t": "12:26",
+          "fy": 140,
+          "fl": 30,
+          "f": 627
         }
       ]
     }
   ],
-  "updated": "2026-09-05 09:04"
+  "updated": "2026-09-05 12:26"
 }
