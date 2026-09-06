@@ -10,10 +10,11 @@ import argparse, io, json, os, subprocess, sys
 from datetime import datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(BASE, "data.json")
+DATA = os.path.join(BASE, "data.json")  # 既定（--dir で切替）
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--dir", default=None, help="データセットのディレクトリ（例: ryo）。省略時はリポジトリ直下")
     ap.add_argument("--date", default=datetime.now().strftime("%Y-%m-%d"))
     ap.add_argument("--foryou", type=int, default=0, help="おすすめでいいねした数（その日の分に足す）")
     ap.add_argument("--following", type=int, default=0, help="フォロー中でいいねした数（その日の分に足す）")
@@ -29,7 +30,10 @@ def main():
     ap.add_argument("--replace", action="store_true", help="足し込まずに上書きする")
     a = ap.parse_args()
 
-    with io.open(DATA, encoding="utf-8") as f:
+    dsdir = BASE if not a.dir else (a.dir if os.path.isabs(a.dir) else os.path.join(BASE, a.dir))
+    datafile = os.path.join(dsdir, "data.json")
+
+    with io.open(datafile, encoding="utf-8") as f:
         d = json.load(f)
     days = d.setdefault("days", [])
 
@@ -71,12 +75,12 @@ def main():
     days.sort(key=lambda r: r["date"])
     d["updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    with io.open(DATA, "w", encoding="utf-8") as f:
+    with io.open(datafile, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
     print("記録:", json.dumps(row, ensure_ascii=False))
-    subprocess.check_call([sys.executable, os.path.join(BASE, "build.py")])
+    subprocess.check_call([sys.executable, os.path.join(BASE, "build.py"), dsdir])
 
 if __name__ == "__main__":
     main()

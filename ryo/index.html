@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""data.json を読んで index.html を生成する。"""
-import io, json, os
-
-BASE = os.path.dirname(os.path.abspath(__file__))
-
-TEMPLATE = r"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -360,7 +353,7 @@ footer{display:flex; justify-content:center; padding-top:6px}
 </div>
 
 <script>
-const DATA = __DATA__;
+const DATA = {"account": "Umapro_ryo", "displayName": "松村僚/一問一喝", "days": [], "updated": ""};
 
 const days = (DATA.days || []).slice().sort((a,b) => a.date < b.date ? -1 : 1);
 const DOW = ["日","月","火","水","木","金","土"];
@@ -614,21 +607,3 @@ $("stamp").textContent = "LAST UPDATED " + (DATA.updated || "");
 </script>
 </body>
 </html>
-"""
-
-def main():
-    import sys as _sys
-    d = _sys.argv[1] if len(_sys.argv) > 1 else BASE
-    if not os.path.isabs(d):
-        d = os.path.join(BASE, d)
-    with io.open(os.path.join(d, "data.json"), encoding="utf-8") as f:
-        data = json.load(f)
-    data.setdefault("updated", "")
-    html = TEMPLATE.replace("__DATA__", json.dumps(data, ensure_ascii=False))
-    out = os.path.join(d, "index.html")
-    with io.open(out, "w", encoding="utf-8") as f:
-        f.write(html)
-    print("built:", out, "(%d days)" % len(data.get("days", [])))
-
-if __name__ == "__main__":
-    main()
