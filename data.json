@@ -1109,11 +1109,11 @@
     },
     {
       "date": "2026-09-09",
-      "foryou": 641,
+      "foryou": 781,
       "following": 80,
       "search": 100,
-      "followers": 643,
-      "followingCount": 662,
+      "followers": 645,
+      "followingCount": 652,
       "runs": [
         {
           "t": "01:00",
@@ -1164,10 +1164,21 @@
           "fl": 40,
           "f": 643,
           "w": 1
+        },
+        {
+          "t": "20:40",
+          "fy": 59,
+          "fl": 0
+        },
+        {
+          "t": "21:20",
+          "fy": 81,
+          "fl": 0,
+          "f": 645
         }
       ],
-      "likesReceived": 56
+      "likesReceived": 70
     }
   ],
-  "updated": "2026-09-09 18:01"
+  "updated": "2026-09-09 21:20"
 }
