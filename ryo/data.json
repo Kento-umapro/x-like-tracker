@@ -112,12 +112,12 @@
     },
     {
       "date": "2026-09-09",
-      "foryou": 763,
-      "following": 90,
+      "foryou": 867,
+      "following": 130,
       "search": 0,
-      "followers": 317,
-      "followingCount": 273,
-      "likesReceived": 48,
+      "followers": 326,
+      "followingCount": 274,
+      "likesReceived": 62,
       "runs": [
         {
           "t": "09:02",
@@ -154,10 +154,16 @@
           "fy": 63,
           "fl": 0,
           "f": 317
+        },
+        {
+          "t": "23:17",
+          "fy": 104,
+          "fl": 40,
+          "f": 326
         }
       ],
-      "note": "おすすめのタイムラインが枯れて63件で打ち切り"
+      "note": "おすすめ104件を確認した時点でタブがブラウザから外れ、残り26件は未確認"
     }
   ],
-  "updated": "2026-09-09 20:54"
+  "updated": "2026-09-09 23:17"
 }
