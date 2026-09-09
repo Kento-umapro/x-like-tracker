@@ -1111,8 +1111,8 @@
       "date": "2026-09-09",
       "foryou": 550,
       "following": 40,
-      "search": 0,
-      "followers": 642,
+      "search": 100,
+      "followers": 643,
       "followingCount": 644,
       "runs": [
         {
@@ -1142,10 +1142,25 @@
           "fy": 140,
           "fl": 0,
           "f": 642
+        },
+        {
+          "t": "15:15",
+          "fy": 0,
+          "fl": 0,
+          "s": 50,
+          "q": "料理"
+        },
+        {
+          "t": "16:16",
+          "fy": 0,
+          "fl": 0,
+          "s": 50,
+          "q": "音楽",
+          "f": 643
         }
       ],
-      "likesReceived": 37
+      "likesReceived": 43
     }
   ],
-  "updated": "2026-09-09 14:36"
+  "updated": "2026-09-09 16:16"
 }
