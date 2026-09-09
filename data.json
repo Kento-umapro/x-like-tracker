@@ -1109,11 +1109,11 @@
     },
     {
       "date": "2026-09-09",
-      "foryou": 550,
-      "following": 40,
+      "foryou": 641,
+      "following": 80,
       "search": 100,
       "followers": 643,
-      "followingCount": 644,
+      "followingCount": 662,
       "runs": [
         {
           "t": "01:00",
@@ -1157,10 +1157,17 @@
           "s": 50,
           "q": "音楽",
           "f": 643
+        },
+        {
+          "t": "18:01",
+          "fy": 91,
+          "fl": 40,
+          "f": 643,
+          "w": 1
         }
       ],
-      "likesReceived": 43
+      "likesReceived": 56
     }
   ],
-  "updated": "2026-09-09 16:16"
+  "updated": "2026-09-09 18:01"
 }
