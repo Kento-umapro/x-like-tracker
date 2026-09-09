@@ -1109,8 +1109,8 @@
     },
     {
       "date": "2026-09-09",
-      "foryou": 130,
-      "following": 0,
+      "foryou": 147,
+      "following": 40,
       "search": 0,
       "followers": null,
       "followingCount": null,
@@ -1119,9 +1119,14 @@
           "t": "01:00",
           "fy": 130,
           "fl": 0
+        },
+        {
+          "t": "08:30",
+          "fy": 17,
+          "fl": 40
         }
       ]
     }
   ],
-  "updated": "2026-09-09 08:23"
+  "updated": "2026-09-09 08:54"
 }
