@@ -112,12 +112,12 @@
     },
     {
       "date": "2026-09-09",
-      "foryou": 700,
+      "foryou": 763,
       "following": 90,
       "search": 0,
-      "followers": 316,
+      "followers": 317,
       "followingCount": 273,
-      "likesReceived": 39,
+      "likesReceived": 48,
       "runs": [
         {
           "t": "09:02",
@@ -148,9 +148,16 @@
           "fy": 140,
           "fl": 50,
           "f": 316
+        },
+        {
+          "t": "20:54",
+          "fy": 63,
+          "fl": 0,
+          "f": 317
         }
-      ]
+      ],
+      "note": "おすすめのタイムラインが枯れて63件で打ち切り"
     }
   ],
-  "updated": "2026-09-09 18:01"
+  "updated": "2026-09-09 20:54"
 }
