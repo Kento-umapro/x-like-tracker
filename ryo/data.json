@@ -166,10 +166,10 @@
     },
     {
       "date": "2026-09-10",
-      "foryou": 700,
+      "foryou": 751,
       "following": 160,
       "search": 0,
-      "followers": 338,
+      "followers": 337,
       "followingCount": 273,
       "likesReceived": 47,
       "runs": [
@@ -202,9 +202,34 @@
           "fy": 140,
           "fl": 40,
           "f": 338
+        },
+        {
+          "t": "23:59",
+          "fy": 51,
+          "fl": 0,
+          "f": 337
         }
-      ]
+      ],
+      "note": "23:25開始のランのうち日付をまたぐ前の51件"
+    },
+    {
+      "date": "2026-09-11",
+      "foryou": 89,
+      "following": 0,
+      "search": 0,
+      "followers": 337,
+      "followingCount": 273,
+      "likesReceived": 0,
+      "runs": [
+        {
+          "t": "00:14",
+          "fy": 89,
+          "fl": 0,
+          "f": 337
+        }
+      ],
+      "note": "9/10 23:25開始のランの日付またぎ分89件"
     }
   ],
-  "updated": "2026-09-10 21:21"
+  "updated": "2026-09-11 00:15"
 }
