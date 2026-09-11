@@ -214,12 +214,12 @@
     },
     {
       "date": "2026-09-11",
-      "foryou": 389,
+      "foryou": 629,
       "following": 130,
       "search": 0,
-      "followers": 343,
+      "followers": 346,
       "followingCount": 273,
-      "likesReceived": 29,
+      "likesReceived": 31,
       "runs": [
         {
           "t": "00:14",
@@ -244,10 +244,16 @@
           "fy": 90,
           "fl": 30,
           "f": 343
+        },
+        {
+          "t": "21:29",
+          "fy": 240,
+          "fl": 0,
+          "f": 346
         }
       ],
       "note": "おすすめ83件で枯渇・リロード後に西村アカウントへ切り替わり再開不可"
     }
   ],
-  "updated": "2026-09-11 19:36"
+  "updated": "2026-09-11 21:29"
 }
