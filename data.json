@@ -1274,19 +1274,26 @@
     },
     {
       "date": "2026-09-12",
-      "foryou": 89,
+      "foryou": 150,
       "following": 40,
       "search": 0,
-      "followers": null,
-      "followingCount": null,
+      "followers": 662,
+      "followingCount": 659,
       "runs": [
         {
           "t": "00:50",
           "fy": 89,
           "fl": 40
+        },
+        {
+          "t": "11:12",
+          "fy": 61,
+          "fl": 0,
+          "f": 662
         }
-      ]
+      ],
+      "likesReceived": 13
     }
   ],
-  "updated": "2026-09-12 11:00"
+  "updated": "2026-09-12 11:12"
 }
