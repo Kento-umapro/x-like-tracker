@@ -1274,11 +1274,11 @@
     },
     {
       "date": "2026-09-12",
-      "foryou": 150,
-      "following": 58,
+      "foryou": 294,
+      "following": 80,
       "search": 0,
-      "followers": 662,
-      "followingCount": 659,
+      "followers": 665,
+      "followingCount": 662,
       "runs": [
         {
           "t": "00:50",
@@ -1295,10 +1295,22 @@
           "t": "13:07",
           "fy": 0,
           "fl": 18
+        },
+        {
+          "t": "13:33",
+          "fy": 31,
+          "fl": 22
+        },
+        {
+          "t": "14:10",
+          "fy": 113,
+          "fl": 0,
+          "f": 665,
+          "w": 1
         }
       ],
-      "likesReceived": 13
+      "likesReceived": 20
     }
   ],
-  "updated": "2026-09-12 13:07"
+  "updated": "2026-09-12 14:10"
 }
