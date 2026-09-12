@@ -1320,7 +1320,7 @@
     {
       "date": "2026-09-13",
       "foryou": 97,
-      "following": 40,
+      "following": 66,
       "search": 0,
       "followers": 666,
       "followingCount": 661,
@@ -1330,10 +1330,15 @@
           "fy": 97,
           "fl": 40,
           "w": 1
+        },
+        {
+          "t": "08:48",
+          "fy": 0,
+          "fl": 26
         }
       ],
       "likesReceived": 0
     }
   ],
-  "updated": "2026-09-13 04:11"
+  "updated": "2026-09-13 08:48"
 }
