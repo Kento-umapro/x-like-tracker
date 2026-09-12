@@ -256,22 +256,28 @@
     },
     {
       "date": "2026-09-12",
-      "foryou": 140,
-      "following": 54,
+      "foryou": 280,
+      "following": 94,
       "search": 0,
       "followers": 345,
       "followingCount": 273,
-      "likesReceived": 6,
+      "likesReceived": 7,
       "runs": [
         {
           "t": "11:08",
           "fy": 140,
           "fl": 54,
           "f": 345
+        },
+        {
+          "t": "13:27",
+          "fy": 140,
+          "fl": 40,
+          "f": 345
         }
       ],
       "note": "フォロー中は枯れて54で打ち切り／途中タブが投稿ページに移動し返信7件に誤いいね→即取り消し、カウント除外"
     }
   ],
-  "updated": "2026-09-12 11:08"
+  "updated": "2026-09-12 13:27"
 }
