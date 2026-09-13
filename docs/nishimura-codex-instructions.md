@@ -348,3 +348,25 @@ x.com/home のウィンドウが2つ以上あると、AppleScript が別の方�
 - 直近1週間（9/5〜9/11）のフォロワー推移：633 → 661（+28）。9/10 +6、9/11 +9 が最良。
 
 詳しくは引き継ぎ書（nishimura-codex-handover.md）を参照。
+
+---
+
+## 8. バックグラウンドで止めない設定（2026-09-13 追記）
+
+Xはバックグラウンドのタブに新しい投稿を読み込みません。以下の2つを組み合わせると、別のデスクトップにいても、他のウィンドウで覆われていても止まらなくなります。
+
+**① Chrome をフラグ付きで起動する**（Chromeを一度終了してから）
+
+```bash
+osascript -e 'tell application "Google Chrome" to quit' && sleep 3 && open -na "Google Chrome" --args --disable-backgrounding-occluded-windows --disable-renderer-backgrounding
+```
+
+DockからChromeを普通に起動し直すとフラグは消えるので、毎回このコマンドで起動すること。
+
+**② Xのタブを「タブ1つだけの専用ウィンドウ」にする**
+
+同じウィンドウ内で別のタブに切り替えられると、フラグがあってもXのタブは非表示扱いになります。Xだけの専用ウィンドウにして、そのウィンドウは触らない運用にしてください。
+
+AppleScript の `move tab` はタブを壊すことがあるので使わないこと。新しいウィンドウを作ってからそこで x.com/home を開き、余った空タブを閉じるのが安全です。
+
+**西村さんと松村さんは別々のChrome（別Googleプロファイル）で運用する**のが前提です。同じChromeを共有するとアカウントが取り合いになります。
