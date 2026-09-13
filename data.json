@@ -1319,8 +1319,8 @@
     },
     {
       "date": "2026-09-13",
-      "foryou": 97,
-      "following": 66,
+      "foryou": 209,
+      "following": 80,
       "search": 0,
       "followers": 666,
       "followingCount": 661,
@@ -1335,10 +1335,15 @@
           "t": "08:48",
           "fy": 0,
           "fl": 26
+        },
+        {
+          "t": "09:15",
+          "fy": 112,
+          "fl": 14
         }
       ],
       "likesReceived": 0
     }
   ],
-  "updated": "2026-09-13 08:48"
+  "updated": "2026-09-13 11:27"
 }
