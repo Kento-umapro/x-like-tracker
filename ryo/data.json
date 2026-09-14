@@ -354,21 +354,27 @@
     },
     {
       "date": "2026-09-14",
-      "foryou": 140,
+      "foryou": 280,
       "following": 50,
       "search": 0,
-      "followers": 350,
+      "followers": 349,
       "followingCount": 288,
-      "likesReceived": 5,
+      "likesReceived": 12,
       "runs": [
         {
           "t": "08:16",
           "fy": 140,
           "fl": 50,
           "f": 350
+        },
+        {
+          "t": "11:26",
+          "fy": 140,
+          "fl": 0,
+          "f": 349
         }
       ]
     }
   ],
-  "updated": "2026-09-14 08:16"
+  "updated": "2026-09-14 11:26"
 }
