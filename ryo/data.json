@@ -437,22 +437,28 @@
     },
     {
       "date": "2026-09-16",
-      "foryou": 140,
-      "following": 40,
+      "foryou": 280,
+      "following": 80,
       "search": 0,
-      "followers": 349,
+      "followers": 348,
       "followingCount": 288,
-      "likesReceived": 2,
+      "likesReceived": 15,
       "runs": [
         {
           "t": "08:31",
           "fy": 140,
           "fl": 40,
           "f": 349
+        },
+        {
+          "t": "16:09",
+          "fy": 140,
+          "fl": 40,
+          "f": 348
         }
       ],
       "note": "フォロー中はK=27でレンダラー停止→再読み込み後13追加で40"
     }
   ],
-  "updated": "2026-09-16 08:31"
+  "updated": "2026-09-16 16:09"
 }
