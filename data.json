@@ -1462,12 +1462,12 @@
     },
     {
       "date": "2026-09-16",
-      "foryou": 280,
-      "following": 90,
+      "foryou": 420,
+      "following": 130,
       "search": 0,
-      "followers": 682,
+      "followers": 681,
       "followingCount": 672,
-      "likesReceived": 19,
+      "likesReceived": 22,
       "runs": [
         {
           "t": "00:23",
@@ -1480,9 +1480,15 @@
           "fy": 140,
           "fl": 40,
           "f": 682
+        },
+        {
+          "t": "16:17",
+          "fy": 140,
+          "fl": 40,
+          "f": 681
         }
       ]
     }
   ],
-  "updated": "2026-09-16 15:46"
+  "updated": "2026-09-16 16:17"
 }
