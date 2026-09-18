@@ -508,10 +508,10 @@
     },
     {
       "date": "2026-09-18",
-      "foryou": 850,
-      "following": 180,
+      "foryou": 990,
+      "following": 230,
       "search": 0,
-      "followers": 353,
+      "followers": 354,
       "followingCount": 291,
       "likesReceived": 27,
       "runs": [
@@ -550,10 +550,16 @@
           "fy": 140,
           "fl": 0,
           "f": 353
+        },
+        {
+          "t": "23:10",
+          "fy": 140,
+          "fl": 50,
+          "f": 354
         }
       ],
       "note": "おすすめ150（途中で他タブ操作によりリロード→4+146で再開）"
     }
   ],
-  "updated": "2026-09-18 18:54"
+  "updated": "2026-09-18 23:10"
 }
