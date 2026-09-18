@@ -508,22 +508,28 @@
     },
     {
       "date": "2026-09-18",
-      "foryou": 140,
-      "following": 40,
+      "foryou": 280,
+      "following": 90,
       "search": 0,
-      "followers": 349,
-      "followingCount": 289,
-      "likesReceived": 7,
+      "followers": 352,
+      "followingCount": 290,
+      "likesReceived": 21,
       "runs": [
         {
           "t": "08:22",
           "fy": 140,
           "fl": 40,
           "f": 349
+        },
+        {
+          "t": "13:09",
+          "fy": 140,
+          "fl": 50,
+          "f": 352
         }
       ],
       "note": "Xから「メールアドレスを修正」の確認ダイアログが出た（警告ではない・未操作で閉じた）"
     }
   ],
-  "updated": "2026-09-18 08:22"
+  "updated": "2026-09-18 13:09"
 }
