@@ -1,8 +1,8 @@
 try{Object.defineProperty(document,'visibilityState',{get:()=>'visible',configurable:true});Object.defineProperty(document,'hidden',{get:()=>false,configurable:true});document.addEventListener('visibilitychange',e=>e.stopImmediatePropagation(),true);}catch(e){}
 window.__MK=function(cap){
  var A={K:0,cap:cap,done:false,idle:0,skip:0,rt:0,rp:0,ng:0,NGL:[],MINE:{},M:(window.__ALLM=window.__ALLM||{}),lastH:0,reason:''};
- A.NG=/セックス|セフレ|エロ|えっち|エッチ|潮吹|クンニ|フェラ|おっぱい|オッパイ|乳首|巨乳|貧乳|オナ[ニー]|中出し|挿入|騎乗位|正常位|変態|淫|陰[部唇茎]|射精|勃起|性欲|性行為|風俗|パパ活|裏垢|裏アカ|ちんこ|ちんぽ|チンコ|チンポ|まんこ|マンコ|精子|童貞|絶頂|イかせ|ハメ|種付|手コキ|寝取|NTR|不倫|ワンナイト|ヤリ[たモ]|抱かれたい|犯され|レイプ|痴漢|下着|パンチラ|全裸|ヌード|ラブホ|愛撫|喘ぎ|大人の玩具|バイブ|AV女優|AV男優|\bAV\b|18禁|R18|R-18|ヌキ|ムラムラ|発情|性処理|出会い系|パイズリ|アナル|舐め犬|えっろ|ドスケベ|スケベ|ヤらせ|ヤれる|ヤった|しにたい|死にたい|自殺|リスカ/i;
- A.isNG=function(a){var e=a.querySelector('[data-testid="tweetText"]');var s=e?e.innerText:'';var n=a.querySelector('[data-testid="User-Name"]');var u=n?n.innerText:'';return A.NG.test(s)||A.NG.test(u);};
+ A.NG=/セックス|セフレ|エロ|えっち|エッチ|潮吹|クンニ|フェラ|おっぱい|オッパイ|乳首|巨乳|貧乳|オナ[ニー]|中出し|挿入|騎乗位|正常位|淫|陰[部唇茎]|射精|勃起|性欲|性行為|風俗|パパ活|裏垢|裏アカ|ちんこ|ちんぽ|チンコ|チンポ|まんこ|マンコ|精子|童貞|絶頂|イかせ|種付|手コキ|寝取|NTR|ワンナイト|ヤリ[たモ]|抱かれたい|犯され|レイプ|痴漢|パンチラ|ヌード|ラブホ|愛撫|喘ぎ|大人の玩具|AV女優|AV男優|18禁|R18|R-18|ムラムラ|発情|性処理|出会い系|パイズリ|アナル|舐め犬|えっろ|ドスケベ|メス堕ち|ショタ|しにたい|死にたい|自殺|リスカ/i;
+ A.isNG=function(a){var e=a.querySelector('[data-testid="tweetText"]');var s=e?e.innerText:'';return A.NG.test(s);};
  A.isAd=function(a){return [...a.querySelectorAll('span')].some(function(x){var t=x.textContent.trim();return t==='Ad'||t==='プロモーション'||t==='Promoted'||t==='広告';});};
  A.isRT=function(a){var sc=a.querySelector('[data-testid="socialContext"]'); return !!(sc && /リポスト|reposted/i.test(sc.textContent)); };
  A.lines=function(el){ return [...el.querySelectorAll('div')].filter(function(d){var s=getComputedStyle(d); return s.width==='2px' && parseFloat(s.height)>20;}); };
