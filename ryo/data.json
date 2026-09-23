@@ -774,11 +774,11 @@
     },
     {
       "date": "2026-09-23",
-      "foryou": 290,
-      "following": 40,
+      "foryou": 430,
+      "following": 90,
       "search": 0,
-      "followers": 377,
-      "followingCount": 292,
+      "followers": 376,
+      "followingCount": 293,
       "runs": [
         {
           "t": "08:55",
@@ -791,9 +791,15 @@
           "fy": 150,
           "fl": 0,
           "f": 377
+        },
+        {
+          "t": "13:23",
+          "fy": 140,
+          "fl": 50,
+          "f": 376
         }
       ]
     }
   ],
-  "updated": "2026-09-23 10:04"
+  "updated": "2026-09-23 13:23"
 }
