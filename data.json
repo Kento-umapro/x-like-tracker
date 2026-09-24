@@ -1850,8 +1850,8 @@
     },
     {
       "date": "2026-09-24",
-      "foryou": 300,
-      "following": 100,
+      "foryou": 150,
+      "following": 50,
       "search": 0,
       "followers": 734,
       "followingCount": 721,
