@@ -1891,21 +1891,27 @@
     },
     {
       "date": "2026-09-25",
-      "foryou": 150,
+      "foryou": 278,
       "following": 50,
       "search": 0,
-      "followers": 743,
-      "followingCount": 721,
-      "likesReceived": 29,
+      "followers": 750,
+      "followingCount": 739,
+      "likesReceived": 45,
       "runs": [
         {
           "t": "10:10",
           "fy": 150,
           "fl": 50,
           "f": 743
+        },
+        {
+          "t": "15:38",
+          "fy": 128,
+          "fl": 0,
+          "f": 750
         }
       ]
     }
   ],
-  "updated": "2026-09-25 10:10"
+  "updated": "2026-09-25 15:38"
 }
