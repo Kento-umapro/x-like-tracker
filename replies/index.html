@@ -1,0 +1,357 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>返信リスト</title>
+<style>
+:root{--bg:#fff;--fg:#111;--sub:#666;--line:#e5e5e5;--acc:#1d9bf0;--done:#e8f5e9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181c;--fg:#e7e9ea;--sub:#8b98a5;--line:#2f3336;--done:#1b3a22}}
+:root[data-theme="dark"]{--bg:#15181c;--fg:#e7e9ea;--sub:#8b98a5;--line:#2f3336;--done:#1b3a22}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:-apple-system,"Hiragino Sans",sans-serif;margin:0;padding:16px;line-height:1.7}
+h1{font-size:20px;margin:0 0 4px}
+.sub{color:var(--sub);font-size:13px;margin-bottom:16px}
+.c{border:1px solid var(--line);border-radius:12px;padding:12px;margin:0 0 12px;max-width:720px}
+.c.done{background:var(--done);opacity:.6}
+.h{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.n{background:var(--acc);color:#fff;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700}
+.who{font-weight:700}
+.when{color:var(--sub);font-size:12px}
+.p{color:var(--sub);font-size:12px;margin-top:4px}
+.q{font-size:13px;margin:6px 0;color:var(--sub)}
+textarea{width:100%;font:inherit;font-size:14px;padding:8px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--fg)}
+.b{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+button,a{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;text-decoration:none}
+a{background:var(--acc);color:#fff;border-color:var(--acc)}
+h2{font-size:16px;margin:24px 0 8px}
+</style></head><body>
+<h1>返信リスト（9/16〜9/24）</h1>
+<div class="sub">このページは西村さんのChromeで開いてください。リンクは同じプロファイルで開きます。<br>「文をコピー」→「コメントを開く」→ 返信欄に貼り付け。</div>
+<div class="c" id="c1">
+<div class="h"><span class="n">1</span><span class="who">みーこ @miikoroom55</span><span class="when">9/16 08:56</span></div>
+<div class="p">元投稿：【任せた瞬間からが育成】9/16 06:48</div>
+<div class="q">「子育てもそうだなと重ねて沁みました」</div>
+<textarea id="t1" rows="4">子育ての方が、よっぽど難易度高いと思います。
+待つのって、やってる側が一番しんどいですよね。
+その視点で読んでいただけて嬉しいです。</textarea>
+<div class="b"><button onclick="cp(1)">文をコピー</button><a href="https://x.com/miikoroom55/status/2100010806662599165" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(1)">完了</button></div>
+</div>
+<div class="c" id="c2">
+<div class="h"><span class="n">2</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/16 12:42</span></div>
+<div class="p">元投稿：【任せた瞬間からが育成】</div>
+<div class="q">「信じて任せる勇気」</div>
+<textarea id="t2" rows="4">任せる勇気って、結局は口を出さない我慢なんですよね。
+僕もまだ半分くらいは我慢できてないです。</textarea>
+<div class="b"><button onclick="cp(2)">文をコピー</button><a href="https://x.com/teruteru197207/status/2100067841814978596" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(2)">完了</button></div>
+</div>
+<div class="c" id="c3">
+<div class="h"><span class="n">3</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/16 13:23</span></div>
+<div class="p">元投稿：【リーダーシップは役職じゃない】9/15 06:40</div>
+<div class="q">「普段の行動が先」</div>
+<textarea id="t3" rows="4">そうなんです。順番が逆だと、役職がついた瞬間に苦しくなります。
+先に動いてた人には、肩書きが後から追いついてくるだけなので。</textarea>
+<div class="b"><button onclick="cp(3)">文をコピー</button><a href="https://x.com/today_CEOch/status/2100078136331555158" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(3)">完了</button></div>
+</div>
+<div class="c" id="c4">
+<div class="h"><span class="n">4</span><span class="who">官兵衛 @kazzu0712</span><span class="when">9/16 17:18</span></div>
+<div class="p">元投稿：【リーダーシップは役職じゃない】</div>
+<div class="q">「ほんとそう思います！」</div>
+<textarea id="t4" rows="4">ありがとうございます。
+肩書きより、周りが自然に頼るかどうかですね。</textarea>
+<div class="b"><button onclick="cp(4)">文をコピー</button><a href="https://x.com/kazzu0712/status/2100137273501360318" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(4)">完了</button></div>
+</div>
+<div class="c" id="c5">
+<div class="h"><span class="n">5</span><span class="who">佐々木 翔 @fc_organizer_s</span><span class="when">9/17 07:01</span></div>
+<div class="p">元投稿：佐々木さんの近況スレッド</div>
+<div class="q">「新規FC決定・11月本部構築」</div>
+<textarea id="t5" rows="4">11月から本部構築、2月募集ですか。早い。
+エンタメ系は初とのことですが、そこに佐々木さんが入るのが面白いです。
+進捗、また聞かせてください。</textarea>
+<div class="b"><button onclick="cp(5)">文をコピー</button><a href="https://x.com/fc_organizer_s/status/2100344357727715478" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(5)">完了</button></div>
+</div>
+<div class="c" id="c6">
+<div class="h"><span class="n">6</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/17 07:54</span></div>
+<div class="p">元投稿：【立場が先か、人が先か】9/17 06:41</div>
+<div class="q">「肩書きを待つのではなく」</div>
+<textarea id="t6" rows="4">そこです。
+肩書きは、先に動いてた人への後払いみたいなものだと思ってます。</textarea>
+<div class="b"><button onclick="cp(6)">文をコピー</button><a href="https://x.com/teruteru197207/status/2100357570049478993" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(6)">完了</button></div>
+</div>
+<div class="c" id="c7">
+<div class="h"><span class="n">7</span><span class="who">Web戦略の軍師 @Kanbee_enpower</span><span class="when">9/17 08:06</span></div>
+<div class="p">元投稿：【立場が先か、人が先か】</div>
+<div class="q">「岡本選手の例・4番に置くことで育つ」</div>
+<textarea id="t7" rows="4">その例、すごく分かります。
+立場が自己認識を書き換えるんですよね。
+ただ打席に立つ準備をしてた人にしか効かない、というのが難しいところです。</textarea>
+<div class="b"><button onclick="cp(7)">文をコピー</button><a href="https://x.com/Kanbee_enpower/status/2100360759595466934" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(7)">完了</button></div>
+</div>
+<div class="c" id="c8">
+<div class="h"><span class="n">8</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/17 09:17</span></div>
+<div class="p">元投稿：【よその店の売上、外から計算できます】9/13 16:59</div>
+<div class="q">「家賃比率まで逆算できる」</div>
+<textarea id="t8" rows="4">まさにそこまで見ると、出店判断の精度が変わります。
+感覚で「いけそう」と言ってる物件ほど、数字に直すと危ないことが多いです。</textarea>
+<div class="b"><button onclick="cp(8)">文をコピー</button><a href="https://x.com/today_CEOch/status/2100378582661128338" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(8)">完了</button></div>
+</div>
+<div class="c" id="c9">
+<div class="h"><span class="n">9</span><span class="who">佐々木 翔 @fc_organizer_s</span><span class="when">9/17 20:12</span></div>
+<div class="p">元投稿：佐々木さんの投稿（ずんだ×抹茶の色味）</div>
+<div class="q">「色がビビッド」</div>
+<textarea id="t9" rows="4">緑、実物で見ると印象変わりますよね。
+ずんだと抹茶なら、むしろ振り切った方が覚えてもらえる気がします。</textarea>
+<div class="b"><button onclick="cp(9)">文をコピー</button><a href="https://x.com/fc_organizer_s/status/2100543333521392105" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(9)">完了</button></div>
+</div>
+<div class="c" id="c10">
+<div class="h"><span class="n">10</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/18 07:56</span></div>
+<div class="p">元投稿：【それ、本当に実力か】9/18 06:45</div>
+<div class="q">「環境や周りへの感謝」</div>
+<textarea id="t10" rows="4">うまくいってる時ほど、自分の実力に見えるんですよね。
+そこで一回疑える人が、次の場所でも結果を出せると思ってます。</textarea>
+<div class="b"><button onclick="cp(10)">文をコピー</button><a href="https://x.com/teruteru197207/status/2100720549752459686" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(10)">完了</button></div>
+</div>
+<div class="c" id="c11">
+<div class="h"><span class="n">11</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/18 12:12</span></div>
+<div class="p">元投稿：【任せた瞬間からが育成】9/16 06:48</div>
+<div class="q">「役割と責任を渡したうえで」</div>
+<textarea id="t11" rows="4">おっしゃる通りで、渡し方が雑だと丸投げになります。
+責任だけ渡して権限を渡さないのが、一番人が潰れるパターンです。</textarea>
+<div class="b"><button onclick="cp(11)">文をコピー</button><a href="https://x.com/today_CEOch/status/2100785124396998663" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(11)">完了</button></div>
+</div>
+<div class="c" id="c12">
+<div class="h"><span class="n">12</span><span class="who">@bakayaro_no2</span><span class="when">9/19 11:03</span></div>
+<div class="p">元投稿：【商品はただの入口】9/19 06:45</div>
+<div class="q">「お一人様でも大丈夫ですかね。」</div>
+<textarea id="t12" rows="4">もちろん大丈夫です。
+カウンター席もありますし、お一人で来られる方も普通にいらっしゃいます。
+焼くのはスタッフがやるので、手ぶらで来てください。</textarea>
+<div class="b"><button onclick="cp(12)">文をコピー</button><a href="https://x.com/bakayaro_no2/status/2101129920307196266" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(12)">完了</button></div>
+</div>
+<div class="c" id="c13">
+<div class="h"><span class="n">13</span><span class="who">ブロックひろ @HeroBlock27</span><span class="when">9/19 11:48</span></div>
+<div class="p">元投稿：【商品はただの入口】</div>
+<div class="q">「本日もよろしくお願いいたします」</div>
+<textarea id="t13" rows="4">こちらこそよろしくお願いします。
+いつも見ていただいてありがとうございます。</textarea>
+<div class="b"><button onclick="cp(13)">文をコピー</button><a href="https://x.com/HeroBlock27/status/2101141269665952049" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(13)">完了</button></div>
+</div>
+<div class="c" id="c14">
+<div class="h"><span class="n">14</span><span class="who">水澤堅一郎 @rasuku_net_com</span><span class="when">9/19 21:32</span></div>
+<div class="p">元投稿：【商品はただの入口】</div>
+<div class="q">「非言語の価値が参入障壁」</div>
+<textarea id="t14" rows="4">まさにそこが一番マネされにくい部分です。
+レシピは3日で真似されますが、空気は真似できないですね。</textarea>
+<div class="b"><button onclick="cp(14)">文をコピー</button><a href="https://x.com/rasuku_net_com/status/2101288215772852238" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(14)">完了</button></div>
+</div>
+<div class="c" id="c15">
+<div class="h"><span class="n">15</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/20 07:59</span></div>
+<div class="p">元投稿：【能力より価値観】9/20 06:49</div>
+<div class="q">「苦しい時こそ在り方が見える」</div>
+<textarea id="t15" rows="4">そこでしか分からないですよね。
+順調な時は、正直みんな良い人に見えます。</textarea>
+<div class="b"><button onclick="cp(15)">文をコピー</button><a href="https://x.com/teruteru197207/status/2101446150771572871" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(15)">完了</button></div>
+</div>
+<div class="c" id="c16">
+<div class="h"><span class="n">16</span><span class="who">Web戦略の軍師 @Kanbee_enpower</span><span class="when">9/20 08:03</span></div>
+<div class="p">元投稿：【能力より価値観】</div>
+<div class="q">「言動に出てくるか、という基準」</div>
+<textarea id="t16" rows="4">ありがとうございます。
+言葉で掲げるだけなら簡単で、判断が割れた時にどっちを取るかで全部バレますね。</textarea>
+<div class="b"><button onclick="cp(16)">文をコピー</button><a href="https://x.com/Kanbee_enpower/status/2101447213448851748" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(16)">完了</button></div>
+</div>
+<div class="c" id="c17">
+<div class="h"><span class="n">17</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/20 12:00</span></div>
+<div class="p">元投稿：【それ、本当に実力か】9/18 06:45</div>
+<div class="q">「どこでも再現できるか」</div>
+<textarea id="t17" rows="4">再現性、そこが全てだと思います。
+環境が変わっても出せる部分だけが、その人の実力ですね。</textarea>
+<div class="b"><button onclick="cp(17)">文をコピー</button><a href="https://x.com/today_CEOch/status/2101506829545304188" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(17)">完了</button></div>
+</div>
+<div class="c" id="c18">
+<div class="h"><span class="n">18</span><span class="who">官兵衛 @kazzu0712</span><span class="when">9/20 15:05</span></div>
+<div class="p">元投稿：【能力より価値観】</div>
+<div class="q">「在り方は簡単には変わらない」</div>
+<textarea id="t18" rows="4">スキルは3ヶ月で伸びますが、在り方は3年かけても変わらないことがあります。
+だから採用で一番見るところになりました。</textarea>
+<div class="b"><button onclick="cp(18)">文をコピー</button><a href="https://x.com/kazzu0712/status/2101553218736234802" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(18)">完了</button></div>
+</div>
+<div class="c" id="c19">
+<div class="h"><span class="n">19</span><span class="who">川口貴生 @FCmado_manager</span><span class="when">9/20 16:11</span></div>
+<div class="p">元投稿：川口さんの【退職のご報告と感謝】9/20 01:51</div>
+<div class="q">「奇抜髪型仲間ですね笑」</div>
+<textarea id="t19" rows="4">髪型仲間、光栄です。
+新しい環境でのお話もまた聞かせてください。こちらこそよろしくお願いします。</textarea>
+<div class="b"><button onclick="cp(19)">文をコピー</button><a href="https://x.com/FCmado_manager/status/2101569975010074937" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(19)">完了</button></div>
+</div>
+<div class="c" id="c20">
+<div class="h"><span class="n">20</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/21 09:30</span></div>
+<div class="p">元投稿：【99度と100度】9/21 06:48</div>
+<div class="q">「見えない積み重ねの時間こそ」</div>
+<textarea id="t20" rows="4">99度の時間が一番しんどいんですよね。
+見た目が変わらないので。そこで辞める人が本当に多いです。</textarea>
+<div class="b"><button onclick="cp(20)">文をコピー</button><a href="https://x.com/teruteru197207/status/2101831439864254500" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(20)">完了</button></div>
+</div>
+<div class="c" id="c21">
+<div class="h"><span class="n">21</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/21 19:50</span></div>
+<div class="p">元投稿：【能力より価値観】9/20 06:49</div>
+<div class="q">「判断の基準がズレていると」</div>
+<textarea id="t21" rows="4">そうなんです。能力が高い人ほど、ズレた方向に速く進んでしまいます。</textarea>
+<div class="b"><button onclick="cp(21)">文をコピー</button><a href="https://x.com/today_CEOch/status/2101987361680945270" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(21)">完了</button></div>
+</div>
+<div class="c" id="c22">
+<div class="h"><span class="n">22</span><span class="who">開業ジャパン @today_CEOch</span><span class="when">9/22 08:09</span></div>
+<div class="p">元投稿：【FC契約書で、最初に見るべき3条項】9/21 17:04</div>
+<div class="q">「契約前に出口まで見ておく」</div>
+<textarea id="t22" rows="4">出口条項、入る時は誰も読まないんですよね。
+揉めるのは全部そこなので、最初に見るべきだと思ってます。</textarea>
+<div class="b"><button onclick="cp(22)">文をコピー</button><a href="https://x.com/today_CEOch/status/2102173349401211269" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(22)">完了</button></div>
+</div>
+<div class="c" id="c23">
+<div class="h"><span class="n">23</span><span class="who">官兵衛 @kazzu0712</span><span class="when">9/22 09:38</span></div>
+<div class="p">元投稿：【待つな、取りに行け】9/22 06:46</div>
+<div class="q">「依存的な姿勢のままでは」</div>
+<textarea id="t23" rows="4">待ってる側は、待ってることに気づけないのが厄介ですね。</textarea>
+<div class="b"><button onclick="cp(23)">文をコピー</button><a href="https://x.com/kazzu0712/status/2102195755390038515" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(23)">完了</button></div>
+</div>
+<div class="c" id="c24">
+<div class="h"><span class="n">24</span><span class="who">祖上仁 @jinjin07131971</span><span class="when">9/22 09:57</span></div>
+<div class="p">元投稿：【待つな、取りに行け】</div>
+<div class="q">「自分が動く、大事にします！」</div>
+<textarea id="t24" rows="4">ありがとうございます。
+動いた分だけ、自分の側に主導権が戻ってきますね。</textarea>
+<div class="b"><button onclick="cp(24)">文をコピー</button><a href="https://x.com/jinjin07131971/status/2102200547168391250" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(24)">完了</button></div>
+</div>
+<div class="c" id="c25">
+<div class="h"><span class="n">25</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/22 10:39</span></div>
+<div class="p">元投稿：【待つな、取りに行け】</div>
+<div class="q">「聞いてませんではなく聞きに行く」</div>
+<textarea id="t25" rows="4">その一言の差が、1年経つと評価の差になってますね。</textarea>
+<div class="b"><button onclick="cp(25)">文をコピー</button><a href="https://x.com/teruteru197207/status/2102211212113301576" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(25)">完了</button></div>
+</div>
+<div class="c" id="c26">
+<div class="h"><span class="n">26</span><span class="who">大隅日向 @BBn27Q5xte4GSGt</span><span class="when">9/22 11:06</span></div>
+<div class="p">元投稿：【待つな、取りに行け】</div>
+<div class="q">「慎重さも大事だけど、すぎると」</div>
+<textarea id="t26" rows="4">慎重さは準備、様子見は停滞。
+見た目が似てるので、自分でも気づきにくいところですね。</textarea>
+<div class="b"><button onclick="cp(26)">文をコピー</button><a href="https://x.com/BBn27Q5xte4GSGt/status/2102218049944432983" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(26)">完了</button></div>
+</div>
+<div class="c" id="c27">
+<div class="h"><span class="n">27</span><span class="who">みつご @mitugo_</span><span class="when">9/22 16:40</span></div>
+<div class="p">元投稿：みつごさんの長野出店告知 9/22 14:26</div>
+<div class="q">「大行列でびっくりでしたw」</div>
+<textarea id="t27" rows="4">とんでもないです、あの行列はすごかったです。
+お疲れ様でした。次の機会もぜひ教えてください。</textarea>
+<div class="b"><button onclick="cp(27)">文をコピー</button><a href="https://x.com/mitugo_/status/2102301908132302912" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(27)">完了</button></div>
+</div>
+<div class="c" id="c28">
+<div class="h"><span class="n">28</span><span class="who">水澤堅一郎 @rasuku_net_com</span><span class="when">9/22 22:53</span></div>
+<div class="p">元投稿：【待つな、取りに行け】</div>
+<div class="q">「主導権を握る人と手放す人」</div>
+<textarea id="t28" rows="4">水澤さん、ありがとうございます。
+待ってる時間は、自分の時間じゃなく相手の時間になってしまうんですよね。
+取りに行った人だけが、段取りを自分の側に置けると思ってます。</textarea>
+<div class="b"><button onclick="cp(28)">文をコピー</button><a href="https://x.com/rasuku_net_com/status/2102395922726683071" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(28)">完了</button></div>
+</div>
+<div class="c" id="c29">
+<div class="h"><span class="n">29</span><span class="who">小林 弘 @Hiroshi01562521</span><span class="when">9/23 00:15</span></div>
+<div class="p">元投稿：【待つな、取りに行け】</div>
+<div class="q">「環境のせいにする前に」</div>
+<textarea id="t29" rows="4">ありがとうございます。
+環境は変えられなくても、環境への出方は自分で選べますもんね。</textarea>
+<div class="b"><button onclick="cp(29)">文をコピー</button><a href="https://x.com/Hiroshi01562521/status/2102416506340667666" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(29)">完了</button></div>
+</div>
+<div class="c" id="c30">
+<div class="h"><span class="n">30</span><span class="who">てるしょん @teruteru197207</span><span class="when">9/23 08:06</span></div>
+<div class="p">元投稿：【自責と他責】9/23 06:49</div>
+<div class="q">「自責＝自分を責めるではなく」</div>
+<textarea id="t30" rows="4">そこの違いが全てだと思ってます。
+責めるとエネルギーが減って、探すとエネルギーが増える。
+できることに目を向ける、そのスタンスが若い子にも伝わっていきますね。</textarea>
+<div class="b"><button onclick="cp(30)">文をコピー</button><a href="https://x.com/teruteru197207/status/2102535038860775915" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(30)">完了</button></div>
+</div>
+<div class="c" id="c31">
+<div class="h"><span class="n">31</span><span class="who">祖上仁 @jinjin07131971</span><span class="when">9/23 10:05</span></div>
+<div class="p">元投稿：【自責と他責】</div>
+<div class="q">「自責思考で改善していきます」</div>
+<textarea id="t31" rows="4">ありがとうございます。
+改善に向く自責は、しんどさじゃなく武器になりますね。</textarea>
+<div class="b"><button onclick="cp(31)">文をコピー</button><a href="https://x.com/jinjin07131971/status/2102565087110443199" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(31)">完了</button></div>
+</div>
+<div class="c" id="c32">
+<div class="h"><span class="n">32</span><span class="who">官兵衛 @kazzu0712</span><span class="when">9/23 10:16</span></div>
+<div class="p">元投稿：【自責と他責】</div>
+<div class="q">「成長の扉が閉ざされる」</div>
+<textarea id="t32" rows="4">官兵衛さん、まさに書きたかったことを言語化していただきました。
+今日のプライドを手放せるかどうか、ここが分かれ目だと思います。
+1年後の自分のために、お互い動き続けましょう。</textarea>
+<div class="b"><button onclick="cp(32)">文をコピー</button><a href="https://x.com/kazzu0712/status/2102567845012132260" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(32)">完了</button></div>
+</div>
+<div class="c" id="c33">
+<div class="h"><span class="n">33</span><span class="who">嶌田 竜也 @lifecoord</span><span class="when">9/23 13:11</span></div>
+<div class="p">元投稿：【自責と他責】</div>
+<div class="q">「自分の責の部分だけを抽出」</div>
+<textarea id="t33" rows="4">「抽出」という言い方、すごくしっくりきました。
+全部背負うと潰れるし、全部手放すと成長しない。
+切り分けられる人が一番伸びますね。</textarea>
+<div class="b"><button onclick="cp(33)">文をコピー</button><a href="https://x.com/lifecoord/status/2102611822872494239" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(33)">完了</button></div>
+</div>
+<div class="c" id="c34">
+<div class="h"><span class="n">34</span><span class="who">嶌田 竜也 @lifecoord</span><span class="when">9/23 16:38</span></div>
+<div class="p">元投稿：【FC契約書で、最初に見るべき3条項】9/21 17:04</div>
+<div class="q">「めくられる質問w」</div>
+<textarea id="t34" rows="4">まさにそれです。
+内訳を聞かれて詰まる本部は、だいたい中身を自分たちでも整理できてないです。
+加盟する側が質問リストを持って行くだけで、相当ふるいにかけられます。</textarea>
+<div class="b"><button onclick="cp(34)">文をコピー</button><a href="https://x.com/lifecoord/status/2102663858058072450" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(34)">完了</button></div>
+</div>
+<div class="c" id="c35">
+<div class="h"><span class="n">35</span><span class="who">Web戦略の軍師 @Kanbee_enpower</span><span class="when">9/23 20:09</span></div>
+<div class="p">元投稿：【飲食の開業資金、最初に相談する場所】9/23 17:08</div>
+<div class="q">「公庫と信金の協調融資」</div>
+<textarea id="t35" rows="4">おっしゃる通りで、うちも協調が一番動きやすかったです。
+公庫は担当者で当たり外れが大きいのも正直あります。
+ただ実績が積める分、2店舗目以降の交渉が全然違ってくるので、最初の1本としては強いと思ってます。</textarea>
+<div class="b"><button onclick="cp(35)">文をコピー</button><a href="https://x.com/Kanbee_enpower/status/2102716999118061943" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(35)">完了</button></div>
+</div>
+<div class="c" id="c36">
+<div class="h"><span class="n">36</span><span class="who">井ノ口 隆真 @GROW16680217</span><span class="when">9/23 20:18</span></div>
+<div class="p">元投稿：【飲食の開業資金、最初に相談する場所】</div>
+<div class="q">「弱点を知れるなんて感謝しかない」</div>
+<textarea id="t36" rows="4">井ノ口さん、その感覚めちゃくちゃ分かります。
+数字を見られるのを怖がってる間は、だいたい自分でも見れてないんですよね。
+見てもらう側に回れると、一気に経営が楽になります。</textarea>
+<div class="b"><button onclick="cp(36)">文をコピー</button><a href="https://x.com/GROW16680217/status/2102719263991804345" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(36)">完了</button></div>
+</div>
+<div class="c" id="c37">
+<div class="h"><span class="n">37</span><span class="who">佐々木 翔 @fc_organizer_s</span><span class="when">9/24 20:02</span></div>
+<div class="p">元投稿：佐々木さんの来期予算スレッド 9/24 07:03</div>
+<div class="q">「男前過ぎるスタンス」</div>
+<textarea id="t37" rows="4">ありがとうございます。
+数字を先に決めてしまう方が、結局ラクなんですよね。
+こちらこそ楽しみにしてます。</textarea>
+<div class="b"><button onclick="cp(37)">文をコピー</button><a href="https://x.com/fc_organizer_s/status/2103077596745678966" target="_blank" rel="noopener">コメントを開く</a><button class="d" onclick="done(37)">完了</button></div>
+</div>
+<h2>リポストへのお礼（引用はゼロ）</h2>
+<div class="c r"><div class="h"><span class="who">東 伏郎 @yvikvx</span><span class="when">9/23・9/22 計3本</span></div>
+<textarea rows="3">東さん、いつもリポストありがとうございます。
+何本も拾っていただけるのが本当に励みになります。
+自責の話も事業計画の話も、現場でしんどい思いをして掴んだことばかりなので、届いていたら嬉しいです。</textarea>
+<div class="b"><a href="https://x.com/yvikvx" target="_blank" rel="noopener">プロフィールを開く</a></div></div>
+<div class="c r"><div class="h"><span class="who">大隅日向 @BBn27Q5xte4GSGt</span><span class="when">9/22 【待つな、取りに行け】</span></div>
+<textarea rows="3">大隅さん、リポストありがとうございます。
+「聞いてません」と「聞きに行ってません」、僕自身が若い頃に言われて刺さった言葉です。
+拾っていただけて嬉しかったです。</textarea>
+<div class="b"><a href="https://x.com/BBn27Q5xte4GSGt" target="_blank" rel="noopener">プロフィールを開く</a></div></div>
+<div class="c r"><div class="h"><span class="who">ミール @rEp1JLCbFyiqFLp</span><span class="when">9/21・9/20 計6本</span></div>
+<textarea rows="3">ミールさん、いつもたくさん拾っていただきありがとうございます。
+価値観の話も加盟金の話も、綺麗事じゃなく実際に痛い目を見た側の実感です。
+続けて読んでいただけているのが何よりの励みです。</textarea>
+<div class="b"><a href="https://x.com/rEp1JLCbFyiqFLp" target="_blank" rel="noopener">プロフィールを開く</a></div></div>
+<div class="c r"><div class="h"><span class="who">松村僚 @Umapro_ryo</span><span class="when">9月</span></div>
+<textarea rows="3">松村さん、リポストありがとうございます。
+引き続き、現場で使える話を出していきます。</textarea>
+<div class="b"><a href="https://x.com/Umapro_ryo" target="_blank" rel="noopener">プロフィールを開く</a></div></div>
+<script>
+function cp(n){var t=document.getElementById('t'+n);t.select();document.execCommand('copy');window.getSelection().removeAllRanges();var b=event.target;var o=b.textContent;b.textContent='コピーしました';setTimeout(function(){b.textContent=o},1200);}
+function done(n){var c=document.getElementById('c'+n);c.classList.toggle('done');try{var k=JSON.parse(localStorage.getItem('done')||'[]');var i=k.indexOf(n);if(i<0)k.push(n);else k.splice(i,1);localStorage.setItem('done',JSON.stringify(k));}catch(e){}}
+try{JSON.parse(localStorage.getItem('done')||'[]').forEach(function(n){var c=document.getElementById('c'+n);if(c)c.classList.add('done')});}catch(e){}
+</script></body></html>
