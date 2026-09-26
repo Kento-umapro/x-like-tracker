@@ -871,10 +871,10 @@
     },
     {
       "date": "2026-09-26",
-      "foryou": 150,
-      "following": 50,
+      "foryou": 300,
+      "following": 100,
       "search": 0,
-      "followers": 378,
+      "followers": 377,
       "followingCount": 300,
       "runs": [
         {
@@ -882,9 +882,15 @@
           "fy": 150,
           "fl": 50,
           "f": 378
+        },
+        {
+          "t": "14:05",
+          "fy": 150,
+          "fl": 50,
+          "f": 377
         }
       ]
     }
   ],
-  "updated": "2026-09-26 10:36"
+  "updated": "2026-09-26 14:05"
 }
