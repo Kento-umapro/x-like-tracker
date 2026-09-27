@@ -1987,7 +1987,24 @@
           "f": 762
         }
       ]
+    },
+    {
+      "date": "2026-09-28",
+      "foryou": 107,
+      "following": 0,
+      "search": 0,
+      "followers": 763,
+      "followingCount": 749,
+      "likesReceived": 14,
+      "runs": [
+        {
+          "t": "08:43",
+          "fy": 107,
+          "fl": 0,
+          "f": 763
+        }
+      ]
     }
   ],
-  "updated": "2026-09-27 21:40"
+  "updated": "2026-09-28 08:43"
 }
