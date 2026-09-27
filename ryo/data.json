@@ -906,10 +906,10 @@
     },
     {
       "date": "2026-09-27",
-      "foryou": 150,
-      "following": 50,
+      "foryou": 300,
+      "following": 100,
       "search": 0,
-      "followers": 383,
+      "followers": 385,
       "followingCount": 300,
       "runs": [
         {
@@ -917,9 +917,15 @@
           "fy": 150,
           "fl": 50,
           "f": 383
+        },
+        {
+          "t": "12:39",
+          "fy": 150,
+          "fl": 50,
+          "f": 385
         }
       ]
     }
   ],
-  "updated": "2026-09-27 09:26"
+  "updated": "2026-09-27 12:39"
 }
