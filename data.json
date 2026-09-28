@@ -1990,12 +1990,12 @@
     },
     {
       "date": "2026-09-28",
-      "foryou": 257,
+      "foryou": 407,
       "following": 50,
       "search": 0,
       "followers": 763,
       "followingCount": 749,
-      "likesReceived": 30,
+      "likesReceived": 36,
       "runs": [
         {
           "t": "08:43",
@@ -2008,9 +2008,15 @@
           "fy": 150,
           "fl": 50,
           "f": 763
+        },
+        {
+          "t": "13:49",
+          "fy": 150,
+          "fl": 0,
+          "f": 763
         }
       ]
     }
   ],
-  "updated": "2026-09-28 12:12"
+  "updated": "2026-09-28 13:49"
 }
