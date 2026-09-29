@@ -2043,12 +2043,12 @@
     },
     {
       "date": "2026-09-29",
-      "foryou": 400,
-      "following": 100,
+      "foryou": 550,
+      "following": 150,
       "search": 30,
-      "followers": 767,
+      "followers": 768,
       "followingCount": 749,
-      "likesReceived": 30,
+      "likesReceived": 37,
       "runs": [
         {
           "t": "08:34",
@@ -2075,9 +2075,15 @@
           "s": 30,
           "q": "料理",
           "f": 767
+        },
+        {
+          "t": "15:26",
+          "fy": 150,
+          "fl": 50,
+          "f": 768
         }
       ]
     }
   ],
-  "updated": "2026-09-29 13:16"
+  "updated": "2026-09-29 15:26"
 }
