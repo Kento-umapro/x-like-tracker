@@ -2868,15 +2868,21 @@
     },
     {
       "date": "2026-10-09",
-      "foryou": 75,
-      "following": 25,
+      "foryou": 150,
+      "following": 50,
       "search": 0,
       "followers": 869,
       "followingCount": 856,
-      "likesReceived": 12,
+      "likesReceived": 24,
       "runs": [
         {
           "t": "07:02",
+          "fy": 75,
+          "fl": 25,
+          "f": 869
+        },
+        {
+          "t": "08:34",
           "fy": 75,
           "fl": 25,
           "f": 869
@@ -2884,5 +2890,5 @@
       ]
     }
   ],
-  "updated": "2026-10-09 07:17"
+  "updated": "2026-10-09 08:17"
 }
