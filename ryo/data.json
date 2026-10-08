@@ -1545,10 +1545,10 @@
     },
     {
       "date": "2026-10-08",
-      "foryou": 150,
-      "following": 50,
+      "foryou": 228,
+      "following": 75,
       "search": 0,
-      "followers": 466,
+      "followers": 468,
       "followingCount": null,
       "runs": [
         {
@@ -1562,9 +1562,15 @@
           "fy": 75,
           "fl": 25,
           "f": 466
+        },
+        {
+          "t": "09:49",
+          "fy": 78,
+          "fl": 25,
+          "f": 468
         }
       ]
     }
   ],
-  "updated": "2026-10-08 08:46"
+  "updated": "2026-10-08 09:49"
 }
