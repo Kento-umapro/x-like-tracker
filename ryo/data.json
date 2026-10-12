@@ -1971,10 +1971,10 @@
     },
     {
       "date": "2026-10-12",
-      "foryou": 975,
-      "following": 325,
+      "foryou": 1050,
+      "following": 350,
       "search": 0,
-      "followers": 523,
+      "followers": 526,
       "followingCount": null,
       "runs": [
         {
@@ -2054,9 +2054,15 @@
           "fy": 75,
           "fl": 25,
           "f": 523
+        },
+        {
+          "t": "21:44",
+          "fy": 75,
+          "fl": 25,
+          "f": 526
         }
       ]
     }
   ],
-  "updated": "2026-10-12 20:47"
+  "updated": "2026-10-12 21:44"
 }
