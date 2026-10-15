@@ -3599,8 +3599,8 @@
     },
     {
       "date": "2026-10-16",
-      "foryou": 225,
-      "following": 75,
+      "foryou": 150,
+      "following": 50,
       "search": 0,
       "followers": 951,
       "followingCount": 946,
@@ -3614,8 +3614,8 @@
         },
         {
           "t": "08:19",
-          "fy": 150,
-          "fl": 50,
+          "fy": 75,
+          "fl": 25,
           "f": 951
         }
       ]
