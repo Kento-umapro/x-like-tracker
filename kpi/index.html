@@ -86,8 +86,8 @@ function render() {
     ['来訪者（ユーザー）', num(sum(ds, K.ga, 'users')), 'ページ表示 ' + num(sum(ds, K.ga, 'views')), 1],
     ['無料申し込み', num(sum(ds, K.apps, 'n')), 'うち法人 ' + num(sum(ds, K.apps, 'corp')) + '・送付済 ' + num(sum(ds, K.apps, 'sent'))],
     ['購入（単品）', num(sum(ds, K.stripe, 'lite') + sum(ds, K.stripe, 'full')), 'フル版 ' + num(sum(ds, K.stripe, 'full')) + '・簡易版 ' + num(sum(ds, K.stripe, 'lite'))],
-    ['売上（決済）', yen(sum(ds, K.stripe, 'yen')), 'Stripeで完了した決済の合計', 1],
-    ['サブスク（今の契約数）', num(K.subActive || 0), '期間の新規 ' + num(sum(ds, K.subs, 'start') + 0) + '・解約 ' + num(sum(ds, K.subs, 'cancel'))],
+    ['売上（入金）', yen(sum(ds, K.stripe, 'yen')), K.yenSource === 'checkout' ? 'Stripeの申し込み時の金額（入金の読み取り権限なし）' : 'Stripeに入金された額（毎月の引き落とし込み・返金を引く）', 1],
+    ['サブスク（Stripeで支払い中）', num(K.subActive || 0), '期間の新規 ' + num(sum(ds, K.subs, 'start')) + '・解約 ' + num(sum(ds, K.subs, 'cancel')) + '（手入力の契約は数えない）'],
     ['名刺QRの読み取り', num(sum(ds, K.ga, 'qrFree') + sum(ds, K.ga, 'qrSample')), '申し込み ' + num(sum(ds, K.ga, 'qrFree')) + '・サンプル ' + num(sum(ds, K.ga, 'qrSample'))],
     ['商品ページの表示', num(sum(ds, K.ga, 'lp')), '/shoken-karte/'],
     ['Xフォロワー', lastF == null ? '—' : num(lastF), firstF != null && lastF != null ? '期間の増減 ' + (lastF - firstF >= 0 ? '+' : '') + (lastF - firstF) : '']
@@ -102,7 +102,7 @@ function render() {
     { type: 'bar', label: 'フル版', data: ds.map(d => g(K.stripe, d, 'full')), backgroundColor: C.t, stack: 's' },
     { type: 'bar', label: '簡易版', data: ds.map(d => g(K.stripe, d, 'lite')), backgroundColor: '#7fd3d6', stack: 's' },
     { type: 'bar', label: 'サブスク契約', data: ds.map(d => g(K.stripe, d, 'sub')), backgroundColor: C.p, stack: 's' },
-    { type: 'line', label: '売上', data: ds.map(d => g(K.stripe, d, 'yen')), borderColor: C.acc, pointRadius: 2, tension: .25, yAxisID: 'y2' }] },
+    { type: 'line', label: '売上（入金）', data: ds.map(d => g(K.stripe, d, 'yen')), borderColor: C.acc, pointRadius: 2, tension: .25, yAxisID: 'y2' }] },
     options: { maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, scales: { x: { ...axis, stacked: true }, y: { ...axis, stacked: true, beginAtZero: true, ticks: { precision: 0 } }, y2: { position: 'right', beginAtZero: true, grid: { display: false }, ticks: { callback: v => yen(v) } } } } });
   chart('#c3', { type: 'bar', data: { labels: lab, datasets: [
     { label: 'お好きな住所で1回無料', data: ds.map(d => g(K.ga, d, 'qrFree')), backgroundColor: C.acc, borderRadius: 3 },
