@@ -37,14 +37,20 @@
     },
     {
       "date": "2026-10-16",
-      "foryou": 80,
+      "foryou": 160,
       "following": 0,
       "search": 0,
       "followers": 4,
-      "followingCount": 12,
+      "followingCount": 13,
       "runs": [
         {
           "t": "07:58",
+          "fy": 80,
+          "fl": 0,
+          "f": 4
+        },
+        {
+          "t": "08:53",
           "fy": 80,
           "fl": 0,
           "f": 4
@@ -52,5 +58,5 @@
       ]
     }
   ],
-  "updated": "2026-10-16 07:58"
+  "updated": "2026-10-16 09:00"
 }
