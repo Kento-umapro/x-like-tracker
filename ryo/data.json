@@ -2483,8 +2483,8 @@
     },
     {
       "date": "2026-10-17",
-      "foryou": 230,
-      "following": 87,
+      "foryou": 305,
+      "following": 112,
       "search": 0,
       "followers": 553,
       "followingCount": null,
@@ -2512,9 +2512,15 @@
           "fy": 80,
           "fl": 25,
           "f": 553
+        },
+        {
+          "t": "11:33",
+          "fy": 75,
+          "fl": 25,
+          "f": 553
         }
       ]
     }
   ],
-  "updated": "2026-10-17 10:44"
+  "updated": "2026-10-17 11:34"
 }
