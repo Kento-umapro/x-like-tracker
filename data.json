@@ -4051,21 +4051,27 @@
     },
     {
       "date": "2026-10-20",
-      "foryou": 75,
-      "following": 25,
+      "foryou": 150,
+      "following": 50,
       "search": 0,
-      "followers": 970,
+      "followers": 973,
       "followingCount": 967,
-      "likesReceived": 5,
+      "likesReceived": 23,
       "runs": [
         {
           "t": "07:16",
           "fy": 75,
           "fl": 25,
           "f": 970
+        },
+        {
+          "t": "08:16",
+          "fy": 75,
+          "fl": 25,
+          "f": 973
         }
       ]
     }
   ],
-  "updated": "2026-10-20 07:16"
+  "updated": "2026-10-20 08:16"
 }
