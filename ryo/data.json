@@ -2724,7 +2724,23 @@
           "fl": 25
         }
       ]
+    },
+    {
+      "date": "2026-10-20",
+      "foryou": 75,
+      "following": 25,
+      "search": 0,
+      "followers": 574,
+      "followingCount": null,
+      "runs": [
+        {
+          "t": "11:06",
+          "fy": 75,
+          "fl": 25,
+          "f": 574
+        }
+      ]
     }
   ],
-  "updated": "2026-10-19 13:56"
+  "updated": "2026-10-20 11:25"
 }
