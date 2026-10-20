@@ -22,9 +22,16 @@ textarea{width:100%;font:inherit;font-size:14px;padding:8px;border:1px solid var
 button,a{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;text-decoration:none}
 a{background:var(--acc);color:#fff;border-color:var(--acc)}
 h2{font-size:16px;margin:24px 0 8px}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0;margin:0 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;max-width:720px}
+.bar button{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:700}
+#cnt{color:var(--sub);font-size:13px}
+#out{max-width:720px;margin:0 0 20px}
+#out textarea{font-size:13px;line-height:1.6}
 </style></head><body>
 <h1>返信リスト（9/16〜10/2）</h1>
 <div class="sub">このページは西村さんのChromeで開いてください。リンクは同じプロファイルで開きます。<br>「文をコピー」→「コメントを開く」→ 返信欄に貼り付け。</div>
+<div class="bar"><button onclick="sum()">未返信をまとめる</button><span id="cnt"></span></div>
+<div id="out" hidden><textarea id="outt" rows="14" spellcheck="false"></textarea><div class="b"><button onclick="cpall()">全部コピー</button><button onclick="document.getElementById('out').hidden=true">閉じる</button></div></div>
 <h2 style="color:#e0245e">新着（9/30〜10/2）コメント16件</h2>
 <div class="c" id="c70">
 <div class="h"><span class="n">70</span><span class="who">『純白なドレス』 @RobeDeNeige</span><span class="when">9/30 09:34</span></div>
@@ -755,6 +762,11 @@ AI講座、ちゃんと現場で使えるところだけ持っていきます。
 <div class="b"><a href="https://x.com/Umapro_ryo" target="_blank" rel="noopener">プロフィールを開く</a></div></div>
 <script>
 function cp(n){var t=document.getElementById('t'+n);t.select();document.execCommand('copy');window.getSelection().removeAllRanges();var b=event.target;var o=b.textContent;b.textContent='コピーしました';setTimeout(function(){b.textContent=o},1200);}
-function done(n){var c=document.getElementById('c'+n);c.classList.toggle('done');try{var k=JSON.parse(localStorage.getItem('done')||'[]');var i=k.indexOf(n);if(i<0)k.push(n);else k.splice(i,1);localStorage.setItem('done',JSON.stringify(k));}catch(e){}}
+function done(n){var c=document.getElementById('c'+n);c.classList.toggle('done');try{var k=JSON.parse(localStorage.getItem('done')||'[]');var i=k.indexOf(n);if(i<0)k.push(n);else k.splice(i,1);localStorage.setItem('done',JSON.stringify(k));}catch(e){}cnt();if(!document.getElementById('out').hidden)sum();}
 try{JSON.parse(localStorage.getItem('done')||'[]').forEach(function(n){var c=document.getElementById('c'+n);if(c)c.classList.add('done')});}catch(e){}
+function unsent(){var a=[];Array.prototype.forEach.call(document.querySelectorAll('.c'),function(c){var id=c.id||'';if(!/^c\d+$/.test(id))return;if(c.classList.contains('done'))return;var t=document.getElementById('t'+id.slice(1));var lk=c.querySelector('a[href*="/status/"]');if(!t||!lk)return;a.push({url:lk.href,txt:(t.value||'').trim()});});return a;}
+function cnt(){var n=unsent().length;var e=document.getElementById('cnt');if(e)e.textContent='未返信 '+n+'件';return n;}
+function sum(){var NL=String.fromCharCode(10),SEP=NL+NL+'--------------------'+NL+NL;var a=unsent(),o=document.getElementById('out'),t=document.getElementById('outt');t.value=a.length?a.map(function(x){return x.url+NL+x.txt;}).join(SEP):'未返信のコメントはありません。';t.rows=Math.min(30,Math.max(8,t.value.split(NL).length+1));o.hidden=false;cnt();}
+function cpall(){var t=document.getElementById('outt');t.select();document.execCommand('copy');window.getSelection().removeAllRanges();var b=event.target,o=b.textContent;b.textContent='コピーしました';setTimeout(function(){b.textContent=o},1200);}
+cnt();
 </script></body></html>
