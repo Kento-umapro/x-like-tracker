@@ -4262,7 +4262,24 @@
           "f": 987
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "foryou": 60,
+      "following": 20,
+      "search": 0,
+      "followers": 987,
+      "followingCount": 983,
+      "likesReceived": 9,
+      "runs": [
+        {
+          "t": "07:17",
+          "fy": 60,
+          "fl": 20,
+          "f": 987
+        }
+      ]
     }
   ],
-  "updated": "2026-10-21 23:18"
+  "updated": "2026-10-22 07:17"
 }
