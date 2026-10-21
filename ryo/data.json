@@ -2901,7 +2901,23 @@
           "f": 581
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "foryou": 75,
+      "following": 25,
+      "search": 0,
+      "followers": 584,
+      "followingCount": null,
+      "runs": [
+        {
+          "t": "07:23",
+          "fy": 75,
+          "fl": 25,
+          "f": 584
+        }
+      ]
     }
   ],
-  "updated": "2026-10-21 23:51"
+  "updated": "2026-10-22 07:31"
 }
