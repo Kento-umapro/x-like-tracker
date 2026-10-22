@@ -2904,10 +2904,10 @@
     },
     {
       "date": "2026-10-22",
-      "foryou": 900,
-      "following": 301,
+      "foryou": 975,
+      "following": 326,
       "search": 0,
-      "followers": 584,
+      "followers": 586,
       "followingCount": null,
       "runs": [
         {
@@ -2981,9 +2981,15 @@
           "fy": 75,
           "fl": 26,
           "f": 584
+        },
+        {
+          "t": "20:24",
+          "fy": 75,
+          "fl": 25,
+          "f": 586
         }
       ]
     }
   ],
-  "updated": "2026-10-22 19:35"
+  "updated": "2026-10-22 20:37"
 }
