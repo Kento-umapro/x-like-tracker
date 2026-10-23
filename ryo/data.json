@@ -3010,8 +3010,8 @@
     },
     {
       "date": "2026-10-23",
-      "foryou": 228,
-      "following": 100,
+      "foryou": 303,
+      "following": 125,
       "search": 0,
       "followers": 587,
       "followingCount": null,
@@ -3040,9 +3040,15 @@
           "fy": 75,
           "fl": 25,
           "f": 587
+        },
+        {
+          "t": "12:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 587
         }
       ]
     }
   ],
-  "updated": "2026-10-23 11:31"
+  "updated": "2026-10-23 12:31"
 }
