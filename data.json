@@ -4604,12 +4604,12 @@
     },
     {
       "date": "2026-10-25",
-      "foryou": 300,
-      "following": 100,
+      "foryou": 375,
+      "following": 125,
       "search": 0,
-      "followers": 1006,
+      "followers": 1007,
       "followingCount": 1001,
-      "likesReceived": 61,
+      "likesReceived": 67,
       "runs": [
         {
           "t": "07:21",
@@ -4634,9 +4634,15 @@
           "fy": 75,
           "fl": 25,
           "f": 1006
+        },
+        {
+          "t": "14:23",
+          "fy": 75,
+          "fl": 25,
+          "f": 1007
         }
       ]
     }
   ],
-  "updated": "2026-10-25 13:22"
+  "updated": "2026-10-25 14:23"
 }
