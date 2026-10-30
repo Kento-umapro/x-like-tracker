@@ -5073,21 +5073,27 @@
     },
     {
       "date": "2026-10-31",
-      "foryou": 75,
-      "following": 25,
+      "foryou": 150,
+      "following": 50,
       "search": 0,
-      "followers": 1025,
+      "followers": 1024,
       "followingCount": 1024,
-      "likesReceived": 3,
+      "likesReceived": 21,
       "runs": [
         {
           "t": "07:16",
           "fy": 75,
           "fl": 25,
           "f": 1025
+        },
+        {
+          "t": "08:18",
+          "fy": 75,
+          "fl": 25,
+          "f": 1024
         }
       ]
     }
   ],
-  "updated": "2026-10-31 07:16"
+  "updated": "2026-10-31 08:18"
 }
