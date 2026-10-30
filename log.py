@@ -7,7 +7,8 @@
   python3 log.py --date 2026-08-22 --followers 445 # 過去日を手で埋める
 """
 import argparse, io, json, os, subprocess, sys
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+JST = timezone(timedelta(hours=9))  # 2026-10-30 実行環境の時計がUTCのことがあるので、日本時間に固定
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data.json")  # 既定（--dir で切替）
@@ -15,7 +16,7 @@ DATA = os.path.join(BASE, "data.json")  # 既定（--dir で切替）
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default=None, help="データセットのディレクトリ（例: ryo）。省略時はリポジトリ直下")
-    ap.add_argument("--date", default=datetime.now().strftime("%Y-%m-%d"))
+    ap.add_argument("--date", default=datetime.now(JST).strftime("%Y-%m-%d"))
     ap.add_argument("--foryou", type=int, default=0, help="おすすめでいいねした数（その日の分に足す）")
     ap.add_argument("--following", type=int, default=0, help="フォロー中でいいねした数（その日の分に足す）")
     ap.add_argument("--search", type=int, default=0, help="検索結果でいいねした数（その日の分に足す）")
@@ -58,7 +59,7 @@ def main():
     if a.received is not None:
         row["likesReceived"] = a.received
     if not a.no_run and not a.replace and (a.foryou or a.following or a.search):
-        run = {"t": a.time or datetime.now().strftime("%H:%M"), "fy": a.foryou, "fl": a.following}
+        run = {"t": a.time or datetime.now(JST).strftime("%H:%M"), "fy": a.foryou, "fl": a.following}
         if a.search:
             run["s"] = a.search
             run["q"] = a.q or "?"
@@ -73,7 +74,7 @@ def main():
             row.pop("note", None)
 
     days.sort(key=lambda r: r["date"])
-    d["updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+    d["updated"] = datetime.now(JST).strftime("%Y-%m-%d %H:%M")
 
     with io.open(datafile, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False, indent=2)
