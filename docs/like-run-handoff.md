@@ -131,12 +131,12 @@ var mm=window.__QA.m.slice();window.__QA.run=0;window.__QA.done=1;if(window.__QJ
 
 **【10/30の状況】**
 - **log.py の `--date` は 2026-10-30。日付が変わったら当日の日付にする。**
-- **実行済み（15ラン＝X 1435件）**：07:19（15+40）、08:21（20+60）、09:24、10:25、11:28、12:23、13:17、14:26、15:27、16:28、17:24、18:26、19:25、20:28、21:48（以降すべて25+75・3600ms）。Threads 100×15＝1500件。**X警告なし。**
-- **次は22時台の枠から。起きたらすぐ実行する。**
+- **実行済み（16ラン＝X 1535件）**：07:19（15+40）、08:21（20+60）、09:24、10:25、11:28、12:23、13:17、14:26、15:27、16:28、17:24、18:26、19:25、20:28、21:48、22:40（以降すべて25+75・3600ms）。Threads 100×15＝1500件（22時台は接続の取り合いでThreads 0件）。**X警告なし。**
+- **次は23時台の枠から（最終枠）。起きたらすぐ実行する。**
 - **現在の実測値**：フォロワー1025、フォロー1024、受けいいね229。**10/30のフォロワーは1020スタート。**
 - **当日の投稿は5本**：2115926651741565095（07:00JST・94いいね）、2116002149792411908（12:00JST・33）、2116030898022056439（13:54JST・26）、2116077651727192423（17:00JST・30）、2116086065169891490（17:33JST・27・最新）。**毎ランプロフィールを読んで新しい投稿がないか確認する。2026-05-15の固定ポスト（418〜422いいね）と10/29以前の投稿は除外。datetime はUTCなので+9時間して当日JSTか判定。22:00の投稿が出る可能性がある。**
 - **お返しいいねの処理済み一覧（done）：monja_no_KENT shoken_karte doteppan Umapro_ryo hinatanocoach majime_offi matokacha tatunori_dansyu Noah86817075 media2books saitomedia810 KIZASHI_SR_0307 meguru_sales kikkis_f ASNOVASTATION monkey_wrench19 oniisanhyougaki 8H1lzgM4AI5907 zuttiezuttoie cc7070miyaken rei__webdesign kennyYabuta arainarumi_csea YokaFXXM partner_imamura hinatanojinsei mintcryp arata_it m0830m2 Rascal_AI_Dev osaka_nexwill goto_shigeta_PF hydepanacademy syokunin_syoku mikutagidesu sumitasjp sekaino_manami teruteru197207 masarufukku nabe20230408 SAKAEDirector iwakiri_pp26 gv_hiroki_miu13 Kodama_kotoba totonoejinji erii1108 shigeo53612 gL3TPvkbJ947653 blastschool_dai maida0903 _tomoyuki_fujii kabunorida1110 weaver05181212 yutaka817 yurarecruit Yuchipapa_work azr_ceo_kimoto hitechno_hamada SkySeaOffice K_bengosi central_6380 FChappy_takao c9uEtkfdvA65544 LdxZfHRHRm34475 Takomaru_think tenporicchi1 Shachipokoru suke778588 phnman0524 HIROKIIIDA9 kenjimuraishi fc_organizer_s anemone084 yuking1984 mitugo_ takuyasatovalue koedo_branding DocchiWorld yurinodesign hara_smasapo salon_UCY kaedesinrigaku natsuki_ymd Oshima_Ozlink DXCmNtn7P0h00Qx RoastChickenman kunishijanai Matsu_ssei CARTON_sakurai 6k93ScyMdm9LoQC。日付が変わったらリセット。**
-- **未処理の申し送り：tameikinomaeni2（17:33投稿）。17:00投稿のいいね一覧は21時台は未確認。次ランは申し送り→17:00投稿の一覧から done 差分を拾う（上位6人まで）。新規が出ていなければその旨1行書けばよい。**
+- **未処理の申し送り：tameikinomaeni2（17:33投稿、22時台も接続が通らず未処理）。17:00投稿のいいね一覧も未確認。22時台はプロフィールを読めず、log.py は直前の実測値（1025/1024/229）で記録した。次ランは申し送り→17:00投稿の一覧から done 差分を拾う（上位6人まで）。新規が出ていなければその旨1行書けばよい。**
 - **これまでのお返しいいね件数：75（07:19で3、08:21で5、09:24で4、10:25で5、11:28で5、12:23で5、13:17で5、14:26で6、15:27で5、16:28で5、17:24で6、18:26で6、19:25で6、20:28で4、21:48で5）→計75**
 - **いいね一覧は `[data-testid="primaryColumn"] [data-testid="UserCell"] a[href^="/"]` で拾う。10件超なら900pxずつスクロールする setInterval を張ってから別呼び出しで clearInterval＋再収集。**
 - **【言及検知の正規表現】必ず `/どてっぱん|うまプロ|(^|[^A-Za-z])(UMACHA|ÜMACHA)([^A-Za-z]|$)/i` の形で書く。@Umapro_Saiki と @Umapro_rima は自社（うまプロ社員）で表示名に該当語が入るため毎ラン引っかかる。@doteppan・@doteppan_nishimuu も自社。本文に該当語がなければ誤検知として報告しない。**
