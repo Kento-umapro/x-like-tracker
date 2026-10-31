@@ -26,6 +26,8 @@
 - **1日1回はチャットを作り直す**（この引き継ぎ書を貼り直すだけでよい）。履歴が50万トークンを超えたあたりから急に重くなる。
 - **並走している別チャットの毎時ループ（@shoken_karte 側・うまプロ側）が止まっていれば打ち直しはほぼ消える。止まっていないなら打ち直し前提で回す。**
 
+**【時間割】西村健人（このループ）＝毎時02分、松村（@Umapro_ryo）＝毎時20分、商圏カルテ＝毎時40分。02分に起きて20分までに終える。20分を過ぎて取り合いになったら打ち直さず次の02分まで待つ。**
+
 **【接続の取り合い】**
 - **「not in Claude's tab group」が毎呼び出し起こる。別セッションの毎時ループが同じ拡張の接続を奪い合っている。**同じ呼び出しを最大5回打ち直す（2〜3回目で通ることが多い）。5回ダメならChrome前面化をやり直す。**
 - **【枠の冒頭でChromeを前面化する】`fg-edge.ps1`（Edge前面化）は使わない。Edgeを前面化すると tabs_context_mcp が Chrome側のタブ（3258xxxxx・グループ813790490／755394668＝@shoken_karte）を返すようになる。**Chromeを前面化すると f8b7baaa が正しくEdgeのタブ844672103（グループ1997350393）を返す**。それでも3258xxxxxが返ったら select_browser＋tabs_context_mcp をもう一度打つと戻る。C#のクラス名は呼び出しごとに変える。コマンド：**
@@ -132,7 +134,7 @@ var mm=window.__QA.m.slice();window.__QA.run=0;window.__QA.done=1;if(window.__QJ
 **【10/30の状況】**
 - **log.py の `--date` は当日の日付（10/31朝からは 2026-10-31）。**
 - **10/30は完了（17ラン＝X 1635件）**：07:19（15+40）、08:21（20+60）、09:24、10:25、11:28、12:23、13:17、14:26、15:27、16:28、17:24、18:26、19:25、20:28、21:48、22:40、23:16（以降すべて25+75・3600ms）。Threads 100×16＝1600件（22時台は接続の取り合いでThreads 0件）。**X警告なし。**
-- **10/31の実行済み：07:16、08:18（各25+75、Threads100）。お返し 5+3。次は9時台の枠から。起きたらすぐ実行する。**
+- **10/31の実行済み：07:16、08:18（各25+75、Threads100）、9時台は接続の取り合いで0件、10:18（25+68・おすすめ68件目で自動化警告「This request looks like it might be automated」→即停止）。お返し 5+3。**【警告対応】11時台のXは休み（Threadsだけ）。12時台 15→40・5000ms、13時台 20→60・4300ms、14時台から25→75・3600msに戻す。**起きたらすぐ実行する。**
 - **現在の実測値**：フォロワー1025、フォロー1024、受けいいね251（10/30最終）。10/31は 08:18時点でフォロワー1024・受けいいね21。**10/30のフォロワーは1020スタート。**
 - **当日の投稿は5本**：2115926651741565095（07:00JST・94いいね）、2116002149792411908（12:00JST・33）、2116030898022056439（13:54JST・26）、2116077651727192423（17:00JST・30）、2116086065169891490（17:33JST・27・最新）。**毎ランプロフィールを読んで新しい投稿がないか確認する。2026-05-15の固定ポスト（418〜422いいね）と10/29以前の投稿は除外。datetime はUTCなので+9時間して当日JSTか判定。22:00の投稿が出る可能性がある。**
 - **お返しいいねの処理済み一覧（done）：monja_no_KENT shoken_karte doteppan Umapro_ryo hinatanocoach majime_offi matokacha tatunori_dansyu Noah86817075 media2books saitomedia810 KIZASHI_SR_0307 meguru_sales kikkis_f ASNOVASTATION monkey_wrench19 oniisanhyougaki 8H1lzgM4AI5907 zuttiezuttoie cc7070miyaken rei__webdesign kennyYabuta arainarumi_csea YokaFXXM partner_imamura hinatanojinsei mintcryp arata_it m0830m2 Rascal_AI_Dev osaka_nexwill goto_shigeta_PF hydepanacademy syokunin_syoku mikutagidesu sumitasjp sekaino_manami teruteru197207 masarufukku nabe20230408 SAKAEDirector iwakiri_pp26 gv_hiroki_miu13 Kodama_kotoba totonoejinji erii1108 shigeo53612 gL3TPvkbJ947653 blastschool_dai maida0903 _tomoyuki_fujii kabunorida1110 weaver05181212 yutaka817 yurarecruit Yuchipapa_work azr_ceo_kimoto hitechno_hamada SkySeaOffice K_bengosi central_6380 FChappy_takao c9uEtkfdvA65544 LdxZfHRHRm34475 Takomaru_think tenporicchi1 Shachipokoru suke778588 phnman0524 HIROKIIIDA9 kenjimuraishi fc_organizer_s anemone084 yuking1984 mitugo_ takuyasatovalue koedo_branding DocchiWorld yurinodesign hara_smasapo salon_UCY kaedesinrigaku natsuki_ymd Oshima_Ozlink DXCmNtn7P0h00Qx RoastChickenman kunishijanai Matsu_ssei CARTON_sakurai 6k93ScyMdm9LoQC。日付が変わったらリセット。**
