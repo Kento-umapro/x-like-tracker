@@ -3804,10 +3804,10 @@
     },
     {
       "date": "2026-11-01",
-      "foryou": 300,
-      "following": 100,
+      "foryou": 376,
+      "following": 125,
       "search": 0,
-      "followers": 635,
+      "followers": 636,
       "followingCount": null,
       "runs": [
         {
@@ -3833,9 +3833,15 @@
           "fy": 75,
           "fl": 25,
           "f": 635
+        },
+        {
+          "t": "11:20",
+          "fy": 76,
+          "fl": 25,
+          "f": 636
         }
       ]
     }
   ],
-  "updated": "2026-11-01 10:37"
+  "updated": "2026-11-01 11:37"
 }
