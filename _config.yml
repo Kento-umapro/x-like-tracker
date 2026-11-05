@@ -1,0 +1,13 @@
+# Pages で配信するものを絞る。
+# ここに挙げたファイルはリポジトリには残るが、公開サイトには出ない。
+exclude:
+  - docs/
+  - note/
+  - threads/
+  - xpost1101/
+  - ryo/followback_queue.md
+  - data.json
+  - ryo/data.json
+  - build.py
+  - log.py
+  - README.md
