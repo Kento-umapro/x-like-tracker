@@ -4112,10 +4112,10 @@
     },
     {
       "date": "2026-11-06",
-      "foryou": 223,
-      "following": 75,
+      "foryou": 298,
+      "following": 100,
       "search": 0,
-      "followers": 742,
+      "followers": 743,
       "followingCount": null,
       "runs": [
         {
@@ -4135,9 +4135,15 @@
           "fy": 75,
           "fl": 25,
           "f": 742
+        },
+        {
+          "t": "10:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 743
         }
       ]
     }
   ],
-  "updated": "2026-11-06 09:47"
+  "updated": "2026-11-06 10:51"
 }
