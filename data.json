@@ -5461,11 +5461,11 @@
     },
     {
       "date": "2026-11-07",
-      "foryou": 525,
-      "following": 175,
+      "foryou": 600,
+      "following": 200,
       "search": 0,
-      "followers": 1035,
-      "followingCount": 1042,
+      "followers": 1036,
+      "followingCount": 1043,
       "likesReceived": 0,
       "runs": [
         {
@@ -5502,9 +5502,15 @@
           "t": "17:12",
           "fy": 75,
           "fl": 25
+        },
+        {
+          "t": "19:13",
+          "fy": 75,
+          "fl": 25,
+          "f": 1036
         }
       ]
     }
   ],
-  "updated": "2026-11-07 17:12"
+  "updated": "2026-11-07 19:13"
 }
