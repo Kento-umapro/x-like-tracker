@@ -4208,10 +4208,10 @@
     },
     {
       "date": "2026-11-07",
-      "foryou": 600,
-      "following": 200,
+      "foryou": 676,
+      "following": 225,
       "search": 0,
-      "followers": 774,
+      "followers": 775,
       "followingCount": null,
       "runs": [
         {
@@ -4261,9 +4261,15 @@
           "fy": 75,
           "fl": 25,
           "f": 774
+        },
+        {
+          "t": "15:21",
+          "fy": 76,
+          "fl": 25,
+          "f": 775
         }
       ]
     }
   ],
-  "updated": "2026-11-07 14:43"
+  "updated": "2026-11-07 15:37"
 }
