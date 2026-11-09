@@ -4432,8 +4432,8 @@
     },
     {
       "date": "2026-11-09",
-      "foryou": 375,
-      "following": 126,
+      "foryou": 450,
+      "following": 151,
       "search": 0,
       "followers": 790,
       "followingCount": null,
@@ -4467,9 +4467,15 @@
           "fy": 75,
           "fl": 25,
           "f": 790
+        },
+        {
+          "t": "12:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 790
         }
       ]
     }
   ],
-  "updated": "2026-11-09 11:38"
+  "updated": "2026-11-09 12:35"
 }
