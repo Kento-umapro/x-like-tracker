@@ -4432,10 +4432,10 @@
     },
     {
       "date": "2026-11-09",
-      "foryou": 825,
-      "following": 276,
+      "foryou": 900,
+      "following": 301,
       "search": 0,
-      "followers": 791,
+      "followers": 790,
       "followingCount": null,
       "runs": [
         {
@@ -4503,9 +4503,15 @@
           "fy": 75,
           "fl": 25,
           "f": 791
+        },
+        {
+          "t": "18:22",
+          "fy": 75,
+          "fl": 25,
+          "f": 790
         }
       ]
     }
   ],
-  "updated": "2026-11-09 17:36"
+  "updated": "2026-11-09 18:36"
 }
