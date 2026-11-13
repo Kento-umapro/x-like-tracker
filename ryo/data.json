@@ -4989,7 +4989,23 @@
           "f": 827
         }
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "foryou": 75,
+      "following": 25,
+      "search": 0,
+      "followers": 827,
+      "followingCount": null,
+      "runs": [
+        {
+          "t": "07:20",
+          "fy": 75,
+          "fl": 25,
+          "f": 827
+        }
+      ]
     }
   ],
-  "updated": "2026-11-13 23:31"
+  "updated": "2026-11-14 07:32"
 }
