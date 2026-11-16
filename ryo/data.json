@@ -5216,10 +5216,10 @@
     },
     {
       "date": "2026-11-16",
-      "foryou": 450,
-      "following": 150,
+      "foryou": 525,
+      "following": 175,
       "search": 0,
-      "followers": 830,
+      "followers": 832,
       "followingCount": null,
       "runs": [
         {
@@ -5257,9 +5257,15 @@
           "fy": 75,
           "fl": 25,
           "f": 830
+        },
+        {
+          "t": "13:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 832
         }
       ]
     }
   ],
-  "updated": "2026-11-16 12:32"
+  "updated": "2026-11-16 13:32"
 }
