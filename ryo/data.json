@@ -5768,7 +5768,23 @@
           "f": 836
         }
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "foryou": 76,
+      "following": 25,
+      "search": 0,
+      "followers": 834,
+      "followingCount": null,
+      "runs": [
+        {
+          "t": "07:21",
+          "fy": 76,
+          "fl": 25,
+          "f": 834
+        }
+      ]
     }
   ],
-  "updated": "2026-11-20 23:31"
+  "updated": "2026-11-21 07:32"
 }
