@@ -5862,7 +5862,23 @@
           "f": 832
         }
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "foryou": 75,
+      "following": 25,
+      "search": 0,
+      "followers": 831,
+      "followingCount": null,
+      "runs": [
+        {
+          "t": "11:20",
+          "fy": 75,
+          "fl": 25,
+          "f": 831
+        }
+      ]
     }
   ],
-  "updated": "2026-11-21 20:31"
+  "updated": "2026-11-22 11:31"
 }
