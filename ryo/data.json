@@ -5953,10 +5953,10 @@
     },
     {
       "date": "2026-11-23",
-      "foryou": 653,
-      "following": 225,
+      "foryou": 728,
+      "following": 250,
       "search": 0,
-      "followers": 844,
+      "followers": 846,
       "followingCount": null,
       "runs": [
         {
@@ -6013,9 +6013,15 @@
           "fy": 75,
           "fl": 25,
           "f": 844
+        },
+        {
+          "t": "17:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 846
         }
       ]
     }
   ],
-  "updated": "2026-11-23 16:37"
+  "updated": "2026-11-23 17:37"
 }
