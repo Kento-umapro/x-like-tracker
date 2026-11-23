@@ -4699,11 +4699,11 @@
     },
     {
       "date": "2026-11-23",
-      "foryou": 179,
+      "foryou": 209,
       "following": 0,
-      "search": 280,
-      "followers": 407,
-      "followingCount": 462,
+      "search": 340,
+      "followers": 405,
+      "followingCount": 460,
       "runs": [
         {
           "t": "07:55",
@@ -4751,9 +4751,17 @@
           "s": 40,
           "q": "図面・CAD",
           "f": 407
+        },
+        {
+          "t": "14:56",
+          "fy": 30,
+          "fl": 0,
+          "s": 60,
+          "q": "図面・CAD",
+          "f": 405
         }
       ]
     }
   ],
-  "updated": "2026-11-23 13:52"
+  "updated": "2026-11-23 14:56"
 }
