@@ -4836,11 +4836,11 @@
     },
     {
       "date": "2026-11-24",
-      "foryou": 59,
+      "foryou": 89,
       "following": 0,
-      "search": 120,
-      "followers": 408,
-      "followingCount": 462,
+      "search": 180,
+      "followers": 409,
+      "followingCount": 464,
       "runs": [
         {
           "t": "08:00",
@@ -4857,9 +4857,17 @@
           "s": 60,
           "q": "建設業・AI",
           "f": 408
+        },
+        {
+          "t": "20:02",
+          "fy": 30,
+          "fl": 0,
+          "s": 60,
+          "q": "建設業・AI",
+          "f": 409
         }
       ]
     }
   ],
-  "updated": "2026-11-24 08:59"
+  "updated": "2026-11-24 20:02"
 }
