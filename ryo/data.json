@@ -6055,10 +6055,10 @@
     },
     {
       "date": "2026-11-24",
-      "foryou": 151,
-      "following": 51,
+      "foryou": 226,
+      "following": 76,
       "search": 0,
-      "followers": 846,
+      "followers": 848,
       "followingCount": null,
       "runs": [
         {
@@ -6072,9 +6072,15 @@
           "fy": 76,
           "fl": 26,
           "f": 846
+        },
+        {
+          "t": "09:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 848
         }
       ]
     }
   ],
-  "updated": "2026-11-24 08:36"
+  "updated": "2026-11-24 09:29"
 }
