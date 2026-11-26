@@ -5041,11 +5041,11 @@
     },
     {
       "date": "2026-11-26",
-      "foryou": 150,
+      "foryou": 180,
       "following": 0,
-      "search": 295,
-      "followers": 407,
-      "followingCount": 469,
+      "search": 348,
+      "followers": 408,
+      "followingCount": 470,
       "runs": [
         {
           "t": "07:53",
@@ -5086,9 +5086,17 @@
           "s": 55,
           "q": "図面・CAD",
           "f": 407
+        },
+        {
+          "t": "12:52",
+          "fy": 30,
+          "fl": 0,
+          "s": 53,
+          "q": "図面・CAD",
+          "f": 408
         }
       ]
     }
   ],
-  "updated": "2026-11-26 11:57"
+  "updated": "2026-11-26 12:52"
 }
