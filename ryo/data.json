@@ -6215,10 +6215,10 @@
     },
     {
       "date": "2026-11-26",
-      "foryou": 375,
-      "following": 125,
+      "foryou": 450,
+      "following": 150,
       "search": 0,
-      "followers": 856,
+      "followers": 857,
       "followingCount": null,
       "runs": [
         {
@@ -6250,9 +6250,15 @@
           "fy": 75,
           "fl": 25,
           "f": 856
+        },
+        {
+          "t": "12:20",
+          "fy": 75,
+          "fl": 25,
+          "f": 857
         }
       ]
     }
   ],
-  "updated": "2026-11-26 11:31"
+  "updated": "2026-11-26 12:29"
 }
