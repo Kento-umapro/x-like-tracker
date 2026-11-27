@@ -6310,10 +6310,10 @@
     },
     {
       "date": "2026-11-27",
-      "foryou": 975,
-      "following": 325,
+      "foryou": 1050,
+      "following": 350,
       "search": 0,
-      "followers": 870,
+      "followers": 872,
       "followingCount": null,
       "runs": [
         {
@@ -6393,9 +6393,15 @@
           "fy": 75,
           "fl": 25,
           "f": 870
+        },
+        {
+          "t": "20:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 872
         }
       ]
     }
   ],
-  "updated": "2026-11-27 19:31"
+  "updated": "2026-11-27 20:32"
 }
