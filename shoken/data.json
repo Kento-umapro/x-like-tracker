@@ -5325,11 +5325,11 @@
     },
     {
       "date": "2026-11-28",
-      "foryou": 30,
+      "foryou": 60,
       "following": 0,
-      "search": 39,
-      "followers": 406,
-      "followingCount": 473,
+      "search": 98,
+      "followers": 405,
+      "followingCount": 472,
       "runs": [
         {
           "t": "00:00",
@@ -5338,9 +5338,17 @@
           "s": 39,
           "q": "建設業・AI",
           "f": 406
+        },
+        {
+          "t": "07:51",
+          "fy": 30,
+          "fl": 0,
+          "s": 59,
+          "q": "業務改善・事務",
+          "f": 405
         }
       ]
     }
   ],
-  "updated": "2026-11-28 00:00"
+  "updated": "2026-11-28 07:51"
 }
