@@ -7014,7 +7014,24 @@
           "f": 1081
         }
       ]
+    },
+    {
+      "date": "2026-11-28",
+      "foryou": 75,
+      "following": 25,
+      "search": 0,
+      "followers": 1080,
+      "followingCount": 1053,
+      "likesReceived": 0,
+      "runs": [
+        {
+          "t": "08:07",
+          "fy": 75,
+          "fl": 25,
+          "f": 1080
+        }
+      ]
     }
   ],
-  "updated": "2026-11-27 23:09"
+  "updated": "2026-11-28 08:07"
 }
