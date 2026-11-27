@@ -5187,11 +5187,11 @@
     },
     {
       "date": "2026-11-27",
-      "foryou": 450,
+      "foryou": 480,
       "following": 0,
-      "search": 816,
-      "followers": 408,
-      "followingCount": 474,
+      "search": 866,
+      "followers": 407,
+      "followingCount": 473,
       "runs": [
         {
           "t": "07:51",
@@ -5312,9 +5312,17 @@
           "s": 44,
           "q": "建設業・AI",
           "f": 408
+        },
+        {
+          "t": "22:52",
+          "fy": 30,
+          "fl": 0,
+          "s": 50,
+          "q": "建設業・AI",
+          "f": 407
         }
       ]
     }
   ],
-  "updated": "2026-11-27 21:55"
+  "updated": "2026-11-27 22:52"
 }
