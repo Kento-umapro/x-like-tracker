@@ -1,0 +1,77 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>商圏カルテ 作成</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#f6f8f7;--card:#fff;--ink:#15211c;--i2:#4f6058;--ln:#dde2dd;--ac:#117a55;--bad:#a4452f;
+ --d:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1512;--card:#161e1a;--ink:#ecf2ee;--i2:#a4b2a9;--ln:#273027;--ac:#43b99b;--bad:#d4785f;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--d);line-height:1.7;
+ display:flex;align-items:center;justify-content:center;min-height:100vh}
+.wrap{width:100%;max-width:420px;padding:24px 16px}
+h1{font-size:19px;margin:0 0 2px}
+.sub{color:var(--i2);font-size:13px;margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px 16px}
+label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}
+input{width:100%;padding:11px 12px;font-size:16px;font-family:inherit;color:var(--ink);
+ background:var(--bg);border:1px solid var(--ln);border-radius:8px}
+input:focus{outline:2px solid var(--ac);outline-offset:1px}
+button{width:100%;margin-top:12px;padding:13px;font-size:16px;font-weight:700;font-family:inherit;
+ color:#fff;background:var(--ac);border:0;border-radius:8px;cursor:pointer}
+button:disabled{opacity:.55;cursor:default}
+.msg{margin-top:12px;font-size:13px;color:var(--i2);min-height:1.7em}
+.msg.err{color:var(--bad);font-weight:700}
+</style></head><body><div class="wrap">
+<h1>商圏カルテ 作成</h1>
+<p class="sub">合言葉を入れると、作成画面にうつります。</p>
+<div class="card">
+  <label for="k">合言葉</label>
+  <input id="k" type="password" autocomplete="current-password" placeholder="">
+  <button id="go">ひらく</button>
+  <p class="msg" id="msg"></p>
+</div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const dec=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+
+async function unlock(key){
+  const r=await fetch('tunnel.json?t='+Date.now(),{cache:'no-store'});
+  if(!r.ok) throw new Error('通り道のファイルが読めません');
+  const j=await r.json();
+  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(key),'PBKDF2',false,['deriveKey']);
+  const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:dec(j.salt),iterations:310000,hash:'SHA-256'},
+    base,{name:'AES-GCM',length:256},false,['decrypt']);
+  const out=await crypto.subtle.decrypt({name:'AES-GCM',iv:dec(j.iv)},k,dec(j.data));
+  return {url:new TextDecoder().decode(out),at:j.at};
+}
+
+async function open_(key,quiet){
+  const m=$('#msg');m.className='msg';m.textContent='つないでいます…';$('#go').disabled=true;
+  try{
+    const {url,at}=await unlock(key);
+    try{localStorage.setItem('karteKey',key)}catch(e){}
+    // つながるか先に試す（PCが寝ていると通り道だけ残ることがある）
+    try{
+      const t=await fetch(url+'/list',{headers:{'x-key':key}});
+      if(!t.ok) throw 0;
+    }catch(e){
+      m.className='msg err';
+      m.textContent='通り道は見つかりましたが、パソコンが応答しません。PCがついているか確かめてください。（'+new Date(at).toLocaleString('ja-JP')+'に更新）';
+      $('#go').disabled=false;return;
+    }
+    location.href=url+'/?k='+encodeURIComponent(key);
+  }catch(e){
+    $('#go').disabled=false;
+    if(quiet){m.className='msg';m.textContent='';return}
+    m.className='msg err';
+    m.textContent=String(e.message||'').includes('読めません')?e.message:'合言葉が違います。';
+  }
+}
+$('#go').onclick=()=>{const v=$('#k').value.trim();if(v)open_(v)};
+$('#k').addEventListener('keydown',e=>{if(e.key==='Enter')$('#go').click()});
+// 前に入れた合言葉があれば、そのまま入る
+(()=>{let v='';try{v=localStorage.getItem('karteKey')||''}catch(e){}
+ if(v){$('#k').value=v;open_(v,true)}else $('#k').focus()})();
+</script></body></html>
