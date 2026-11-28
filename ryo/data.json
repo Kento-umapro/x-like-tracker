@@ -6417,8 +6417,8 @@
     },
     {
       "date": "2026-11-28",
-      "foryou": 300,
-      "following": 100,
+      "foryou": 375,
+      "following": 125,
       "search": 0,
       "followers": 875,
       "followingCount": null,
@@ -6446,9 +6446,15 @@
           "fy": 75,
           "fl": 25,
           "f": 875
+        },
+        {
+          "t": "11:21",
+          "fy": 75,
+          "fl": 25,
+          "f": 875
         }
       ]
     }
   ],
-  "updated": "2026-11-28 10:30"
+  "updated": "2026-11-28 11:32"
 }
