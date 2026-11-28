@@ -54,7 +54,7 @@ async function open_(key,quiet){
     try{localStorage.setItem('karteKey',key)}catch(e){}
     // つながるか先に試す（PCが寝ていると通り道だけ残ることがある）
     try{
-      const t=await fetch(url+'/list',{headers:{'x-key':key}});
+      const t=await fetch(url+'/list?k='+encodeURIComponent(key));
       if(!t.ok) throw 0;
     }catch(e){
       m.className='msg err';
