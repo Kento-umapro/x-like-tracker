@@ -64,7 +64,9 @@ async function open_(key,quiet){
     location.href=url+'/?k='+encodeURIComponent(key);
   }catch(e){
     $('#go').disabled=false;
-    if(quiet){m.className='msg';m.textContent='';return}
+    // 合言葉が変わったときは、覚えていたものを捨てて入れ直してもらう
+    try{if(localStorage.getItem('karteKey')===key)localStorage.removeItem('karteKey')}catch(e2){}
+    if(quiet){m.className='msg';m.textContent='';$('#k').value='';$('#k').focus();return}
     m.className='msg err';
     m.textContent=String(e.message||'').includes('読めません')?e.message:'合言葉が違います。';
   }
